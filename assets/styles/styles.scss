@@ -1,0 +1,51 @@
+@import "vendors/reset.scss";
+@import "main.scss";
+
+@import "footer.scss";
+
+
+:root{
+  --font-color: #C2C1C2;
+  --bg-color: #111D4A;
+  --bg-2nd-color:#6622CC;
+  --action-color:#20FC8F;
+  --white:#fff;
+  --black:#1E1E24;
+}
+html{
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+
+
+}
+img {
+  max-width: 100%;
+}
+h1{
+  font-family: 'Teko-Regular';
+  font-size: 3rem;
+}
+h2{
+  font-family: 'Teko-Regular';
+  font-size: 5rem;
+  margin: 2rem;
+}
+h3{
+  font-family: 'Teko-Regular';
+  font-size: 2rem;
+}
+h4{
+  font-family: 'Teko-Regular';
+}
+p, span{
+  font-family: 'PilcrowRounded-Regular';
+  font-size: 1.5rem;
+}
+li{
+  font-family: 'PilcrowRounded-Regular';
+}
+// HOVER EFFECT
+
+
