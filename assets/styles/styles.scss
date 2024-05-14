@@ -3,12 +3,75 @@
 
 @import "footer.scss";
 
+@font-face {
+  font-family: 'Comico-Regular';
+  src: url('./fonts/Comico-Regular.woff2') format('woff2'),
+       url('./fonts/Comico-Regular.woff') format('woff'),
+       url('./fonts/Comico-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Extralight';
+  src: url('./fonts/Synonym-Extralight.woff2') format('woff2'),
+       url('./fonts/Synonym-Extralight.woff') format('woff'),
+       url('./fonts/Synonym-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Light';
+  src: url('./fonts/Synonym-Light.woff2') format('woff2'),
+       url('./fonts/Synonym-Light.woff') format('woff'),
+       url('./fonts/Synonym-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Regular';
+  src: url('./fonts/Synonym-Regular.woff2') format('woff2'),
+       url('./fonts/Synonym-Regular.woff') format('woff'),
+       url('./fonts/Synonym-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Medium';
+  src: url('./fonts/Synonym-Medium.woff2') format('woff2'),
+       url('./fonts/Synonym-Medium.woff') format('woff'),
+       url('./fonts/Synonym-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Semibold';
+  src: url('./fonts/Synonym-Semibold.woff2') format('woff2'),
+       url('./fonts/Synonym-Semibold.woff') format('woff'),
+       url('./fonts/Synonym-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Bold';
+  src: url('./fonts/Synonym-Bold.woff2') format('woff2'),
+       url('./fonts/Synonym-Bold.woff') format('woff'),
+       url('./fonts/Synonym-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 
 :root{
-  --font-color: #C2C1C2;
-  --bg-color: #111D4A;
-  --bg-2nd-color:#6622CC;
-  --action-color:#20FC8F;
+  --main-color: #500472;
+  --second-color: #79cbb8;
+  --false-color:#92140C;
+  --true-color:#FFD400;
   --white:#fff;
   --black:#1E1E24;
 }
@@ -20,31 +83,35 @@ html{
 
 
 }
+body{
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
 img {
   max-width: 100%;
 }
 h1{
-  font-family: 'Teko-Regular';
+  font-family: 'Comico-Regular';
   font-size: 3rem;
 }
 h2{
-  font-family: 'Teko-Regular';
+  font-family: 'Comico-Regular';
   font-size: 5rem;
   margin: 2rem;
 }
 h3{
-  font-family: 'Teko-Regular';
+  font-family: 'Synonym-Regular';
   font-size: 2rem;
 }
 h4{
-  font-family: 'Teko-Regular';
+  font-family: 'Synonym-Regular';
 }
 p, span{
-  font-family: 'PilcrowRounded-Regular';
+  font-family: 'Synonym-light';
   font-size: 1.5rem;
 }
 li{
-  font-family: 'PilcrowRounded-Regular';
+  font-family: 'Synonym-light';
 }
 // HOVER EFFECT
 
