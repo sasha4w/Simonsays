@@ -9,6 +9,7 @@
     font-weight: 700;
     outline: none;
     position: relative;
+    color: var(--main-color);
     background-color:var(--true-color);
     border: solid 1px transparent;
     border-radius:10px;
@@ -20,8 +21,9 @@
     width:350px;
     margin:auto;
     overflow:hidden;
-    background-color:var(--second-color);
+    background-color:var(--main-color);
     height:90%;
+    border-radius: 3%;
   }
   
   .instructions {
