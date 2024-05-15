@@ -68,14 +68,24 @@
   font-display: swap;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Indie Flower';
+  src: 
+       url('./fonts/IndieFlower-Regular.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 
 :root{
   --main-color: #500472;
   --second-color: #79cbb8;
-  --false-color:#92140C;
-  --true-color:#FFD400;
+  --false-color:#6d6192;
+  --true-color:#92e0a9;
   --white:#fff;
   --black:#1E1E24;
+  --title-police:'Comico-Regular';
+  --text-police:'Indie Flower';
 }
 html{
   scroll-behavior: smooth;
@@ -93,27 +103,27 @@ img {
   max-width: 100%;
 }
 h1{
-  font-family: 'Comico-Regular';
+  font-family: var(--title-police);
   font-size: 3rem;
 }
 h2{
-  font-family: 'Comico-Regular';
+  font-family: var(--title-police);
   font-size: 5rem;
   margin: 2rem;
 }
 h3{
-  font-family: 'Synonym-Regular';
+  font-family: var(--text-police);
   font-size: 2rem;
 }
 h4{
-  font-family: 'Synonym-Regular';
+  font-family: var(--text-police);
 }
 p, span{
-  font-family: 'Synonym-light';
+  font-family: var(--text-police);
   font-size: 1.5rem;
 }
 li{
-  font-family: 'Synonym-light';
+  font-family: var(--text-police);
 }
 // HOVER EFFECT
 

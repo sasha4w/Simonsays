@@ -9,21 +9,21 @@
     font-weight: 700;
     outline: none;
     position: relative;
-    color: var(--main-color);
-    background-color:var(--true-color);
+    color: var(--second-color);
+    background-color: var(--main-color);
     border: solid 1px transparent;
-    border-radius:10px;
+    border-radius:1rem;
     -webkit-font-smoothing: antialiased;
   }
   
   .nav {
     position:relative;
-    width:350px;
+    width:300px;
     margin:auto;
     overflow:hidden;
-    background-color:var(--main-color);
+    background-color:var(--false-color);
     height:90%;
-    border-radius: 3%;
+    border-radius: 1rem;
   }
   
   .instructions {
