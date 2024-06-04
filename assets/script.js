@@ -39,11 +39,5 @@ for (let i = 0; i < buttons.length; i++) {
 `  ;
     
   });
-  // html linked
-//   <div class="box">
-//   <button>Pierre</button>
-// <button>Feuilles</button>
-// <button>Ciseaux</button>
-// </div>
   
 }
