@@ -1,16 +1,21 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Chifoumi
   const buttons = document.querySelectorAll("button");
   let isSubmitted = false; // Drapeau pour suivre si le joueur a fait un choix
 
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function() {
+    buttons[i].addEventListener("click", function () {
       const joueur = buttons[i].innerHTML;
-      const robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
+      const robot =
+        buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
       let resultat = "";
       if (joueur === robot) {
         resultat = "Egalité";
-      } else if ((joueur === "Pierre" && robot === "Ciseaux") || (joueur === "Ciseaux" && robot === "Feuilles") || (joueur === "Feuilles" && robot === "Pierre")) {
+      } else if (
+        (joueur === "Pierre" && robot === "Ciseaux") ||
+        (joueur === "Ciseaux" && robot === "Feuilles") ||
+        (joueur === "Feuilles" && robot === "Pierre")
+      ) {
         resultat = "Gagné";
       } else {
         resultat = "Perdu";
@@ -42,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
       }
       // Désactiver les boutons
-      buttons.forEach(button => button.disabled = true);
+      buttons.forEach((button) => (button.disabled = true));
     }
   }, 1000); // Intervalle ajusté à 1000ms (1 seconde) pour plus de précision
 });

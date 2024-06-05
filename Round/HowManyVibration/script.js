@@ -1,39 +1,34 @@
-document.addEventListener("DOMContentLoaded", function() {
-
-
-// Correction    
+document.addEventListener("DOMContentLoaded", function () {
+  // Correction
   function isCorrect() {
     if (word === randomWord) {
-        
-        document.getElementById("result").innerHTML = "Victoire!";
+      document.getElementById("result").innerHTML = "Victoire!";
     } else {
-        document.getElementById("result").innerHTML = "Incorrect!";
+      document.getElementById("result").innerHTML = "Incorrect!";
     }
   }
-  if ('vibrate' in navigator) {
-    // Déclencher une vibration sous forme de motif
-    // Vibrer pendant 1 seconde, faire une pause pendant 0,5 seconde,
-    // Vibrer pendant 0,2 seconde, faire une pause pendant 0,2 seconde,
-    // Vibrer pendant 0,5 seconde, faire une pause pendant 1 seconde
-    navigator.vibrate([1000, 200, 1000, 200, 1000, 200]);
+  if ("vibrate" in navigator) {
+    document.getElementById("result").innerHTML = "Bizz Bizz!";
+    window.navigator.vibrate([200, 200, 200]);
+  } else {
+    document.getElementById("result").innerHTML = "Bizz Bizz!";
   }
-  
-// Chrono
+  // Chrono
   let countdown = 8;
   const countdownElement = document.getElementById("countdown");
   countdownElement.innerHTML = countdown;
 
   const countdownInterval = setInterval(() => {
-      countdown--;
-      countdownElement.innerHTML = countdown;
+    countdown--;
+    countdownElement.innerHTML = countdown;
 
-      if (countdown === 0) {
-          clearInterval(countdownInterval);
-          if (!isSubmitted) {
-              isCorrect();
-          }
-          document.getElementById("word1").disabled = true;
-          document.getElementById("submitBtn").disabled = true; // Masquer le bouton
+    if (countdown === 0) {
+      clearInterval(countdownInterval);
+      if (!isSubmitted) {
+        isCorrect();
       }
+      document.getElementById("word1").disabled = true;
+      document.getElementById("submitBtn").disabled = true; // Masquer le bouton
+    }
   }, 800);
 });

@@ -1,36 +1,36 @@
 {
-    "name": "Simon says",
-    "short_name": "SimonSays",
-    "description": "Application reprenant les concepts du simon says en exploitant divers technologie du téléphone",
-    "start_url": "/?utm_source=homescreen",
-    "scope": "/",
-    "display": "standalone",
-    "orientation": "portrait",
-    "background_color": "#6d6192",
-    "theme_color": "#0078d7",
-    "icons": [
-      {
-        "src": "assets/img/favicon72x72.png",
-        "sizes": "72x72",
-        "type": "image/png"
-      },
-      {
-        "src": "assets/img/favicon163x155.png",
-        "sizes": "163x155",
-        "type": "image/png"
-      },
+  "name": "Simon says",
+  "short_name": "SimonSays",
+  "description": "Application reprenant les concepts du simon says en exploitant divers technologie du téléphone",
+  "start_url": "/?utm_source=homescreen",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#6d6192",
+  "theme_color": "#0078d7",
+  "icons": [
+    {
+      "src": "assets/img/favicon72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon163x155.png",
+      "sizes": "163x155",
+      "type": "image/png"
+    },
 
-      {
-        "src": "assets/img/favicon343x343.png",
-        "sizes": "343x343",
-        "type": "image/png"
-      }
-    ],
-    "related_applications": [
-      {
-        "platform": "webapp",
-        "url": "https://appligame.netlify.app/manifest.json"
-      }
-    ],
-    "prefer_related_applications": true
-  }
+    {
+      "src": "assets/img/favicon343x343.png",
+      "sizes": "343x343",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://appligame.netlify.app/manifest.json"
+    }
+  ],
+  "prefer_related_applications": true
+}
