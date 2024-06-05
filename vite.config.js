@@ -12,6 +12,8 @@ export default defineConfig({
         XChifoumi: resolve(__dirname, 'Round/XChifoumi/index.html'),
         XTrivia: resolve(__dirname, 'Round/XTrivia/index.html'),
         XColorCheck: resolve(__dirname, 'Round/XColorCheck/index.html'),
+        HowManyVibration: resolve(__dirname, 'Round/HowManyVibration/index.html'),
+
       },
     },
   },
