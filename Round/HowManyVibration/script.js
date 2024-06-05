@@ -1,12 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
   let isSubmitted = false;
 
-  // Correction function
+  // Générer un nombre aléatoire de vibrations entre 1 et 10
+  const randomVibrationNumber = Math.floor(Math.random() * 10) + 1;
+
+  // Afficher le nombre de vibrations aléatoires
+  document.getElementById(
+    "vibrationCount"
+  ).innerHTML = `Nombre de vibrations: ${randomVibrationNumber}`;
+
+  // Fonction de correction
   function isCorrect() {
     const vibrationNumber = document
       .getElementById("vibrationNumber")
       .value.trim();
-    if (parseInt(vibrationNumber) === 3) {
+    if (parseInt(vibrationNumber) === randomVibrationNumber) {
       document.getElementById("result").innerHTML = "Victoire!";
     } else {
       document.getElementById("result").innerHTML = "Incorrect!";
@@ -16,14 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
     isSubmitted = true;
   }
 
+  // Empêche la soumission par défaut du formulaire et vérifie l'entrée
   document
     .getElementById("submitBtn")
     .addEventListener("click", function (event) {
-      event.preventDefault(); // Empêche la soumission par défaut du formulaire
-      isCorrect();
+      event.preventDefault();
+      if (!isSubmitted) {
+        isCorrect();
+      }
     });
 
-  // Vibration support check and initiation
+  // Vérification de la prise en charge de la vibration et définition de la fonction de vibration simple
   navigator.vibrate =
     navigator.vibrate ||
     navigator.webkitVibrate ||
@@ -32,21 +43,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function vibrateSimple() {
     if (navigator.vibrate) {
-      navigator.vibrate([200, 200, 200]);
+      let pattern = [];
+      for (let i = 0; i < randomVibrationNumber; i++) {
+        pattern.push(200, 200); // 200ms de vibration, 200ms de pause
+      }
+      navigator.vibrate(pattern);
     }
   }
 
+  // Ajouter un écouteur d'événement pour le bouton de vibration
   document
     .getElementById("vibrationOn")
     .addEventListener("click", vibrateSimple);
 
+  // Afficher l'état de la fonctionnalité de vibration au chargement de la page
   if (navigator.vibrate) {
     document.getElementById("vibration").innerHTML = "Bizz Bizz !";
-    navigator.vibrate([200, 200, 200]);
+    vibrateSimple();
   } else {
     document.getElementById("vibration").innerHTML = "ça vibre pas";
   }
-
   // Countdown logic
   let countdown = 8;
   const countdownElement = document.getElementById("countdown");
