@@ -24,6 +24,11 @@
       "src": "/favicon343x343.png",
       "sizes": "343x343",
       "type": "image/png"
+    },
+    {
+      "src": "/favicon512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "related_applications": [
