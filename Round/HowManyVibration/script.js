@@ -7,9 +7,20 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("result").innerHTML = "Incorrect!";
     }
   }
-  if ("vibrate" in navigator) {
+
+  navigator.vibrate =
+    navigator.vibrate ||
+    navigator.webkitVibrate ||
+    navigator.mozVibrate ||
+    navigator.msVibrate;
+
+  if (navigator.vibrate) {
+    // vibration API supported
+
     document.getElementById("vibration").innerHTML = "Bizz Bizz !";
-    window.navigator.vibrate([200, 200, 200]);
+    //navigator.vibrate(1000);
+    navigator.vibrate([500, 500, 500]);
+    //navigator.vibrate(0);
   } else {
     document.getElementById("vibration").innerHTML = "ça vibre pas";
   }
