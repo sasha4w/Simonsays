@@ -7,8 +7,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        XWordCheck: resolve(__dirname, 'Round/XWordCheck/index.html'),
         roundtest: resolve(__dirname, 'Round/roundtest.html'),
+        XWordCheck: resolve(__dirname, 'Round/XWordCheck/index.html'),
+        XChifoumi: resolve(__dirname, 'Round/XChifoumi/index.html'),
+        XTrivia: resolve(__dirname, 'Round/XTrivia/index.html'),
+        XColorCheck: resolve(__dirname, 'Round/XColorCheck/index.html'),
       },
     },
   },
