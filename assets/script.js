@@ -6,14 +6,9 @@ window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   // Stocker l'événement pour l'utiliser plus tard
   deferredPrompt = e;
-  // Afficher votre propre bouton ou bannière pour proposer l'installation
-  showInstallPromotion();
-});
-
-function showInstallPromotion() {
-  const installButton = document.createElement("button");
-  installButton.textContent = "Installer l'application";
-  document.body.appendChild(installButton);
+  // Afficher le bouton d'installation
+  const installButton = document.getElementById("installButton");
+  installButton.style.display = "block";
 
   installButton.addEventListener("click", () => {
     // Afficher la bannière d'installation native
@@ -27,7 +22,7 @@ function showInstallPromotion() {
       deferredPrompt = null;
     });
   });
-}
+});
 
 // ANIMATION MENU //
 TweenMax.staggerFrom(
