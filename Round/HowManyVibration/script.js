@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   if ("vibrate" in navigator) {
-    document.getElementById("result").innerHTML = "Bizz Bizz!";
+    document.getElementById("vibration").innerHTML = "Bizz Bizz !";
     window.navigator.vibrate([200, 200, 200]);
   } else {
-    document.getElementById("result").innerHTML = "Bizz Bizz!";
+    document.getElementById("vibration").innerHTML = "ça vibre pas";
   }
   // Chrono
   let countdown = 8;
