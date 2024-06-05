@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         XWordCheck: resolve(__dirname, 'Round/XWordCheck/index.html'),
+        roundtest: resolve(__dirname, 'Round/roundtest.html'),
       },
     },
   },
