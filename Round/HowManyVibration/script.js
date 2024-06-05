@@ -1,32 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Correction
+  let isSubmitted = false;
+
+  // Correction function
   function isCorrect() {
-    if (vibrationNumber === 3) {
+    const vibrationNumber = document
+      .getElementById("vibrationNumber")
+      .value.trim();
+    if (parseInt(vibrationNumber) === 3) {
       document.getElementById("result").innerHTML = "Victoire!";
     } else {
       document.getElementById("result").innerHTML = "Incorrect!";
     }
+    document.getElementById("vibrationNumber").disabled = true;
+    document.getElementById("submitBtn").disabled = true;
+    isSubmitted = true;
   }
 
+  document
+    .getElementById("submitBtn")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Empêche la soumission par défaut du formulaire
+      isCorrect();
+    });
+
+  // Vibration support check and initiation
   navigator.vibrate =
     navigator.vibrate ||
     navigator.webkitVibrate ||
     navigator.mozVibrate ||
     navigator.msVibrate;
-  function vibrateSimple() {
-    navigatorvibrate([200, 200, 200]);
-  }
-  if (navigator.vibrate) {
-    // vibration API supported
 
+  function vibrateSimple() {
+    if (navigator.vibrate) {
+      navigator.vibrate([200, 200, 200]);
+    }
+  }
+
+  document
+    .getElementById("vibrationOn")
+    .addEventListener("click", vibrateSimple);
+
+  if (navigator.vibrate) {
     document.getElementById("vibration").innerHTML = "Bizz Bizz !";
-    //navigator.vibrate(1000);
     navigator.vibrate([200, 200, 200]);
-    //navigator.vibrate(0);
   } else {
     document.getElementById("vibration").innerHTML = "ça vibre pas";
   }
-  // Chrono
+
+  // Countdown logic
   let countdown = 8;
   const countdownElement = document.getElementById("countdown");
   countdownElement.innerHTML = countdown;
@@ -41,21 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
         isCorrect();
       }
       document.getElementById("vibrationNumber").disabled = true;
-      document.getElementById("submitBtn").disabled = true; // Masquer le bouton
+      document.getElementById("submitBtn").disabled = true;
     }
   }, 1000);
+
   document
-    .getElementById("submitBtn")
+    .getElementById("vibrationNumber")
     .addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
         event.preventDefault(); // Empêche l'action par défaut d'Entrée
         document.getElementById("vibrationForm").submit(); // Soumet le formulaire
       }
-    });
-  document
-    .getElementById("submitBtn")
-    .addEventListener("click", function (event) {
-      event.preventDefault(); // Empêche la soumission par défaut du formulaire
-      isCorrect();
     });
 });
