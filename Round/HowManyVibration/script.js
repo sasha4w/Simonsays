@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   let isSubmitted = false;
-
+  const numVibrations = Math.floor(Math.random() * 10) + 1;
   // Correction function
   function isCorrect() {
     const vibrationNumber = document
       .getElementById("vibrationNumber")
       .value.trim();
-    if (parseInt(vibrationNumber) === vibrationSequence.length) {
+    if (parseInt(vibrationNumber) === numVibrations) {
       document.getElementById("result").innerHTML = "Victoire!";
     } else {
       document.getElementById("result").innerHTML = "Incorrect!";
@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Generate random vibration sequence
   function getRandomVibrationSequence() {
-    const numVibrations = Math.floor(Math.random() * 10) + 1; // Number of vibrations between 1 and 10
     let sequence = [];
     for (let i = 0; i < numVibrations; i++) {
       sequence.push(200, 200); // 200ms vibration followed by 200ms pause
     }
+    console.log("Number of vibrations:", numVibrations);
     return sequence;
   }
 

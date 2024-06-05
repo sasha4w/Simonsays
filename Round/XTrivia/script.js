@@ -72,6 +72,196 @@ document.addEventListener("DOMContentLoaded", function () {
       choices: ["Espagnol", "Français", "Portugais", "Italien"],
       correct: 2,
     },
+    {
+      question: "Quel est le plus haut sommet du monde ?",
+      choices: [
+        "Mont Everest",
+        "Mont Kilimandjaro",
+        "Mont Blanc",
+        "Mont Elbrouz",
+      ],
+      correct: 0,
+    },
+    {
+      question: "Qui a écrit 'Les Misérables' ?",
+      choices: [
+        "Émile Zola",
+        "Victor Hugo",
+        "Gustave Flaubert",
+        "Honoré de Balzac",
+      ],
+      correct: 1,
+    },
+    {
+      question: "Quelle est la plus grande planète du système solaire ?",
+      choices: ["Terre", "Saturne", "Jupiter", "Neptune"],
+      correct: 2,
+    },
+    {
+      question: "Dans quel pays se trouve la Tour Eiffel ?",
+      choices: ["Espagne", "Italie", "France", "Allemagne"],
+      correct: 2,
+    },
+    {
+      question: "Quel est l'élément chimique dont le symbole est Fe ?",
+      choices: ["Fer", "Fluor", "Francium", "Fermium"],
+      correct: 0,
+    },
+    {
+      question: "Quelle ville est connue sous le nom de 'Big Apple' ?",
+      choices: ["Los Angeles", "San Francisco", "New York", "Chicago"],
+      correct: 2,
+    },
+    {
+      question: "Quel est le plus long fleuve du monde ?",
+      choices: ["Amazon", "Nile", "Yangtze", "Mississippi"],
+      correct: 1,
+    },
+    {
+      question: "Qui a découvert l'Amérique ?",
+      choices: [
+        "Ferdinand Magellan",
+        "Marco Polo",
+        "Christophe Colomb",
+        "Vasco de Gama",
+      ],
+      correct: 2,
+    },
+    {
+      question: "Quelle est la plus grande île du monde ?",
+      choices: ["Groenland", "Madagascar", "Borneo", "Nouvelle-Guinée"],
+      correct: 0,
+    },
+    {
+      question: "Quelle est la capitale de l'Espagne ?",
+      choices: ["Barcelone", "Madrid", "Séville", "Valence"],
+      correct: 1,
+    },
+    {
+      question: "Quel pays est surnommé le 'pays du Soleil-Levant' ?",
+      choices: ["Chine", "Corée", "Thaïlande", "Japon"],
+      correct: 3,
+    },
+    {
+      question: "Quel est le plus grand pays du monde en superficie ?",
+      choices: ["Canada", "Chine", "États-Unis", "Russie"],
+      correct: 3,
+    },
+    {
+      question: "Qui a écrit 'Roméo et Juliette' ?",
+      choices: [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Jane Austen",
+      ],
+      correct: 0,
+    },
+    {
+      question: "Quelle est la plus petite planète du système solaire ?",
+      choices: ["Mercure", "Mars", "Vénus", "Pluton"],
+      correct: 0,
+    },
+    {
+      question: "Quel est le symbole chimique de l'or ?",
+      choices: ["Ag", "Au", "Pb", "Pt"],
+      correct: 1,
+    },
+    {
+      question: "Qui a peint 'La nuit étoilée' ?",
+      choices: [
+        "Claude Monet",
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Paul Cézanne",
+      ],
+      correct: 1,
+    },
+    {
+      question: "Quelle est la langue la plus parlée au monde ?",
+      choices: ["Anglais", "Espagnol", "Chinois", "Hindou"],
+      correct: 2,
+    },
+    {
+      question: "Quelle est la capitale du Canada ?",
+      choices: ["Toronto", "Vancouver", "Montréal", "Ottawa"],
+      correct: 3,
+    },
+    {
+      question: "Quel pays a remporté la Coupe du Monde de la FIFA 2018 ?",
+      choices: ["Brésil", "Allemagne", "France", "Espagne"],
+      correct: 2,
+    },
+    {
+      question: "Quel est le plus grand lac d'eau douce du monde ?",
+      choices: [
+        "Lac Victoria",
+        "Lac Tanganyika",
+        "Lac Supérieur",
+        "Lac Baïkal",
+      ],
+      correct: 2,
+    },
+    {
+      question: "Quelle est la capitale de l'Italie ?",
+      choices: ["Venise", "Milan", "Naples", "Rome"],
+      correct: 3,
+    },
+    {
+      question: "Quel est le plus long fleuve d'Amérique du Sud ?",
+      choices: ["Orénoque", "Paraná", "Amazon", "Rio Negro"],
+      correct: 2,
+    },
+    {
+      question: "Qui a écrit 'Le Petit Prince' ?",
+      choices: [
+        "Antoine de Saint-Exupéry",
+        "Marcel Proust",
+        "Albert Camus",
+        "Jean-Paul Sartre",
+      ],
+      correct: 0,
+    },
+    {
+      question: "Quel pays a inventé les Jeux Olympiques ?",
+      choices: ["Italie", "Grèce", "France", "Japon"],
+      correct: 1,
+    },
+    {
+      question: "Quelle est la monnaie officielle du Royaume-Uni ?",
+      choices: ["Euro", "Livre sterling", "Dollar", "Franc"],
+      correct: 1,
+    },
+    {
+      question: "Quelle est la plus haute montagne d'Afrique ?",
+      choices: ["Mont Elgon", "Mont Kenya", "Mont Kilimandjaro", "Mont Meru"],
+      correct: 2,
+    },
+    {
+      question: "Quel est le plus grand état des États-Unis ?",
+      choices: ["Texas", "Californie", "Alaska", "Montana"],
+      correct: 2,
+    },
+    {
+      question: "Qui a écrit 'Guerre et Paix' ?",
+      choices: [
+        "Fiodor Dostoïevski",
+        "Léon Tolstoï",
+        "Anton Tchekhov",
+        "Maxime Gorki",
+      ],
+      correct: 1,
+    },
+    {
+      question: "Quelle est la capitale de la Russie ?",
+      choices: ["Saint-Pétersbourg", "Vladivostok", "Novossibirsk", "Moscou"],
+      correct: 3,
+    },
+    {
+      question: "Quel est le plus long fleuve d'Asie ?",
+      choices: ["Mékong", "Yangtze", "Indus", "Gange"],
+      correct: 1,
+    },
   ];
   // Fonction pour sélectionner une question aléatoirement
   function getRandomQuestion() {
