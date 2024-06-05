@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let isSubmitted = false;
   // Fonction pour vérifier si le mot est correct
   function isCorrect() {
-    const word = document.getElementById("word1").value.trim();
+    const word = document.getElementById("word1").value.trim().toLowerCase();
     if (word === randomWord) {
       document.getElementById("result").innerHTML = "Victoire!";
     } else {

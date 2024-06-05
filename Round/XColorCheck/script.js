@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Ajouter un écouteur d'événements au bouton
   function isCorrect() {
-    const word = document.getElementById("word1").value.trim();
+    const word = document.getElementById("word1").value.trim().toLowerCase();
     const colorName = colors[randomHexColor]; // Récupérer le nom de la couleur correspondante
 
     if (word === colorName) {
