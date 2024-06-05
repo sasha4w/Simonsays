@@ -21,14 +21,32 @@
     },
 
     {
-      "src": "/favicon343x343.png",
-      "sizes": "343x343",
+      "src": "/favicon383x383.png",
+      "sizes": "383x383",
       "type": "image/png"
     },
     {
       "src": "/favicon512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/maskable_icon72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/maskable_icon144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/maskable_icon383x383.png",
+      "sizes": "383x383",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "related_applications": [
