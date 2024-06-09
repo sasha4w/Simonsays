@@ -16,6 +16,8 @@ export default defineConfig({
           __dirname,
           "Round/HowManyVibration/index.html"
         ),
+        Voicheck: resolve(__dirname, "Round/Voicheck/index.html"),
+        Spamclick: resolve(__dirname, "Round/Spamclick/index.html"),
       },
     },
   },

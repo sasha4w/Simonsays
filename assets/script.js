@@ -16,6 +16,8 @@ window.addEventListener("beforeinstallprompt", (e) => {
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === "accepted") {
         console.log("L'utilisateur a accepté l'installation");
+        // Demander la permission de notification après l'acceptation de l'installation
+        requestNotificationPermission();
       } else {
         console.log("L'utilisateur a refusé l'installation");
       }
@@ -23,6 +25,19 @@ window.addEventListener("beforeinstallprompt", (e) => {
     });
   });
 });
+
+// autorisé les notifications
+function requestNotificationPermission() {
+  if (Notification.permission === "default") {
+    Notification.requestPermission().then((permission) => {
+      if (permission === "granted") {
+        console.log("Permission de notification accordée.");
+      } else {
+        console.log("Permission de notification refusée.");
+      }
+    });
+  }
+}
 
 // ANIMATION MENU //
 TweenMax.staggerFrom(
