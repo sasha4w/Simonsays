@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll("button");
   let isSubmitted = false; // Drapeau pour suivre si le joueur a fait un choix
 
+  function disableButtons() {
+    // Désactiver les boutons une fois qu'un choix est fait
+    buttons.forEach((button) => (button.disabled = true));
+  }
+
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
       const joueur = buttons[i].innerHTML;
@@ -26,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Résultat : ${resultat}
       `;
       isSubmitted = true; // Marquer que le joueur a fait un choix
+      disableButtons(); // Appel de la fonction pour désactiver les boutons
     });
   }
 
@@ -45,9 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".resultat").innerHTML = `
           Résultat : Perdu (Temps écoulé)
         `;
+        disableButtons(); // Appel de la fonction pour désactiver les boutons
       }
-      // Désactiver les boutons
-      buttons.forEach((button) => (button.disabled = true));
     }
   }, 1000); // Intervalle ajusté à 1000ms (1 seconde) pour plus de précision
 });
