@@ -16,7 +16,7 @@ export default defineConfig({
           __dirname,
           "Round/HowManyVibration/index.html"
         ),
-        Voicecheck: resolve(__dirname, "Round/Voicecheck/index.html"),
+        Voicecheck: resolve(__dirname, "Round/VoiceCheck/index.html"),
         Spamclick: resolve(__dirname, "Round/XSpamclick/index.html"),
         Landscapemode: resolve(__dirname, "Round/XLandscapemode/index.html"),
       },
