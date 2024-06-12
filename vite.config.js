@@ -19,6 +19,10 @@ export default defineConfig({
         XVoicecheck: resolve(__dirname, "Round/XVoiceCheck/index.html"),
         XSpamclick: resolve(__dirname, "Round/XSpamClick/index.html"),
         XLandscapemode: resolve(__dirname, "Round/XLandscapemode/index.html"),
+        ShakeIt: resolve(__dirname, "Round/ShakeIt/index.html"),
+        BatteryCheck: resolve(__dirname, "Round/BatteryCheck/index.html"),
+        LumesCheck: resolve(__dirname, "Round/LumesCheck/index.html"),
+
       },
     },
   },
