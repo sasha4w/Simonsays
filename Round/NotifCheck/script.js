@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Request notification permission
   if (Notification.permission !== "granted") {
     Notification.requestPermission().then(permission => {
+      console.log("Notification permission:", permission);
       if (permission !== "granted") {
         alert("Please enable notifications for this game to work.");
       }
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (Notification.permission === "granted") {
       const notification = new Notification("Click me to win!", {
         body: "Click this notification before time runs out.",
-        icon: "icon.png" // You can add an icon if you want
+        icon: "icon.png" // Ensure icon.png is correctly located
       });
 
       notification.onclick = () => {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Show the notification after a random time between 5 to 8 seconds
   const notificationDelay = Math.floor(Math.random() * 3000) + 5000;
+  console.log("Notification will appear after", notificationDelay / 1000, "seconds");
   setTimeout(showNotification, notificationDelay);
 
   // Countdown timer
