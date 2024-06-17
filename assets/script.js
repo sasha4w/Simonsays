@@ -47,44 +47,20 @@ TweenMax.staggerFrom(
   0.2
 );
 
-$(".btn").click(function () {
-  TweenMax.staggerTo(
-    ".btn",
-    0.5,
-    { opacity: 0, y: -350, ease: Back.easeIn },
-    0.1
-  );
+// ANIMATION BOUTON ROUND //
+document.querySelectorAll(".levelTest").forEach(function(button) {
+  button.addEventListener("click", function(event) {
+    event.preventDefault(); // Empêche la redirection immédiate
+
+    var targetUrl = button.getAttribute("href"); // Capture l'URL du lien du bouton cliqué
+
+    // Ajout d'un délai avant de permettre la navigation
+    setTimeout(function() {
+      window.location.href = targetUrl;
+    }, 300); // 300 millisecondes correspondent à la durée de l'animation CSS
+  });
 });
+
 
 // ROUND //
 
-// WORD CHECK
-
-// CHIFOUMI //
-const buttons = document.querySelectorAll("button");
-// const resultat = document.querySelector(".resultat");
-
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function () {
-    const joueur = buttons[i].innerHTML;
-    const robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
-    let resultat = "";
-    // resultat.innerHTML = joueur + "       " + robot;
-    if (joueur === robot) {
-      resultat = "Egalité";
-    } else if (
-      (joueur === "Pierre" && robot === "Ciseaux") ||
-      (joueur === "Ciseaux" && robot === "Feuilles") ||
-      (joueur === "Feuilles" && robot === "Pierre")
-    ) {
-      resultat = "Gagné";
-    } else {
-      resultat = "Perdu";
-    }
-    document.querySelector(".resultat").innerHTML = `
-  Joueur : ${joueur} </br>
-  Robot : ${robot} <br/>
-  Résultat : ${resultat}
-`;
-  });
-}

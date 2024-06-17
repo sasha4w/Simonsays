@@ -22,6 +22,7 @@ export default defineConfig({
         ShakeIt: resolve(__dirname, "Round/ShakeIt/index.html"),
         BatteryCheck: resolve(__dirname, "Round/BatteryCheck/index.html"),
         LumesCheck: resolve(__dirname, "Round/LumesCheck/index.html"),
+        NotifCheck: resolve(__dirname, "Round/NotifCheck/index.html"),
 
       },
     },
