@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+  console.log("DOMContentLoaded event fired");
+
   let countdown = 10;
   const countdownElement = document.getElementById("countdown");
   const resultElement = document.getElementById("result");
@@ -18,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to show notification
   function showNotification() {
+    console.log("Showing notification");
     if (Notification.permission === "granted") {
       const notification = new Notification("Click me to win!", {
         body: "Click this notification before time runs out.",
