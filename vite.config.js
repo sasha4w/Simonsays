@@ -20,7 +20,8 @@ export default defineConfig({
         BatteryCheck: resolve(__dirname, "Round/BatteryCheck/index.html"),
         LumesCheck: resolve(__dirname, "Round/LumesCheck/index.html"),
         NotifCheck: resolve(__dirname, "Round/NotifCheck/index.html"),
-        utils: resolve(__dirname, "assets/utils.js"), // Ajout de l'entrée pour utils.js
+        gameOver: resolve(__dirname, "gameOver.html"),
+        utils: resolve(__dirname, "assets/utils.js"),
       },
     },
   },
