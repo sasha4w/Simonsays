@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   let countdown = 8;
   const countdownElement = document.getElementById("countdown");
@@ -18,9 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
       orientationType === "landscape-secondary"
     ) {
       resultElement.innerHTML = "Victoire! Vous êtes en paysage.";
+      Utils.addToScore(10);
     } else {
       resultElement.innerHTML = "Perdu! Vous n'êtes pas en paysage.";
+      Utils.loseLife();
     }
+    if (Utils.sessionData.lives === 0) {
+      Utils.gameOver();
+    }
+    setTimeout(() => {
+        window.location.href = Utils.getRandomPath();
+    }, 3000);
   }
   }, 1000);
   });

@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOMContentLoaded event fired");
 
@@ -32,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
           isClicked = true;
           resultElement.innerHTML = "Victoire!";
           clearInterval(countdownInterval);
+          Utils.addToScore(10);
         }
       };
     }
@@ -51,7 +56,12 @@ document.addEventListener("DOMContentLoaded", function() {
       clearInterval(countdownInterval);
       if (!isClicked) {
         resultElement.innerHTML = "Défaite!";
+        Utils.loseLife();
+        if (Utils.sessionData.lives === 0) {
+          Utils.gameOver();
+        }
       }
+
     }
   }, 1000);
 });

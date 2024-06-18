@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   // Correction
   function isCorrect() {
@@ -34,9 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
       if (event.results.length > 0) {
         const transcript = event.results[0][0].transcript;
         resultParagraph.textContent = `Victoire ! Vous avez dit : ${transcript}`;
+        Utils.addToScore(10);
+
       } else {
         resultParagraph.textContent = "Défaite ! Vous n'avez rien dit.";
+        Utils.loseLife();
       }
+      if (Utils.sessionData.lives === 0) {
+        Utils.gameOver();
+      }
+      setTimeout(() => {
+          window.location.href = Utils.getRandomPath();
+      }, 3000);
     };
 
     recognition.onspeechend = () => {

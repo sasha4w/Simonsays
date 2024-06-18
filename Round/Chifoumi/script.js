@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   // Chifoumi
   const buttons = document.querySelectorAll("button");
@@ -22,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
         (joueur === "Feuilles" && robot === "Pierre")
       ) {
         resultat = "Gagné";
+        Utils.addToScore(10);
       } else {
         resultat = "Perdu";
+        Utils.loseLife();
       }
       document.querySelector(".resultat").innerHTML = `
         Joueur : ${joueur} </br>
@@ -53,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         disableButtons(); // Appel de la fonction pour désactiver les boutons
       }
+      if (Utils.sessionData.lives === 0) {
+        Utils.gameOver();
+      }
+      setTimeout(() => {
+          window.location.href = Utils.getRandomPath();
+      }, 3000);
     }
   }, 1000); // Intervalle ajusté à 1000ms (1 seconde) pour plus de précision
 });

@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>ShakeIt</title>
-    <script src="./script.js" defer type="module"></script>
-    
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="description"
+          content="Jeu reprenant le concept de simon says pour un projet étudiant"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" type="image/png" href="/favicon72x72.png" />
+        <meta name="theme-color" content="#0078d7" />
+        <title>ShakeIt</title>
+        <link rel="stylesheet" type="text/css" href="./../../assets/styles/styles.scss" />
+        <script src="./script.js" defer type="module"></script>
+      </head>
 <body>
     <header>
         <div id="countdown">8</div>
     </header>
     <main class="round">
+        <div class="uiPlayer">
+            <p>Vies restantes : <span id="livesCount"></span></p>
+            <p>Score actuel : <span id="scoreDisplay"></span></p>
+          </div>
+          <div class="question"><p>Jacque a dit secoue ton appareil</p></div>
         <button id="startButton">Start Game</button>
     </main>
     <p id="result"></p>

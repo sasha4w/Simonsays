@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function() {
   // Chrono
   let countdown = 8;
@@ -9,9 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
     countdown--;
     countdownElement.innerHTML = countdown;
 
-    if (countdown === 0) {
+    if (countdown === 0 || countdown < 0) {
       clearInterval(countdownInterval);
       checkBatteryStatus();
+      if (Utils.sessionData.lives === 0) {
+        Utils.gameOver();
+      }
+      setTimeout(() => {
+          window.location.href = Utils.getRandomPath();
+      }, 3000);
     }
   }, 800);
 
@@ -20,8 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
     navigator.getBattery().then(function(battery) {
       if (battery.charging) {
         document.getElementById("result").innerHTML = "Victoire! La batterie est en charge.";
+        Utils.addToScore(10);
       } else {
         document.getElementById("result").innerHTML = "Défaite! La batterie n'est pas en charge.";
+        Utils.loseLife();
       }
     });
   }

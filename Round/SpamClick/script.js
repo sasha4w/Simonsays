@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   let clickCount = 0;
   let requiredClicks;
@@ -41,13 +45,28 @@ if (clickCount >= requiredClicks) {
 
 // Fonction pour terminer le jeu
 function endGame(victory) {
-clearInterval(countdownInterval);
-if (victory) {
-document.getElementById("result").innerText = "Vous avez gagné!";
-} else {
-document.getElementById("result").innerText = "Vous avez perdu.";
-}
-document.getElementById("clickButton").disabled = true;
+  clearInterval(countdownInterval); // Arrête le compte à rebours
+
+  if (victory) {
+      document.getElementById("result").innerText = "Vous avez gagné!";
+      Utils.addToScore(10);
+
+  } else {
+      document.getElementById("result").innerText = "Vous avez perdu.";
+      Utils.loseLife();
+
+
+  }
+
+  document.getElementById("clickButton").disabled = true;
+
+  // Redirection automatique après 3 secondes
+  if(Utils.sessionData.lives == 0){
+    Utils.gameOver();
+  }
+  setTimeout(() => {
+      window.location.href = Utils.getRandomPath();
+  }, 3000);
 }
 
 // Appeler startGame() au chargement du document pour démarrer automatiquement le jeu

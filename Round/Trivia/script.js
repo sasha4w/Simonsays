@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   // Tableau des questions et choix de réponses
   const questions = [
@@ -321,6 +325,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Désactiver tous les boutons radio après la sélection
     const choices = document.getElementsByName("choices");
     choices.forEach((choice) => (choice.disabled = true));
+    if (isCorrect) {
+      Utils.addToScore(10);
+    } else {
+      Utils.loseLife();
+    }
+    if (Utils.sessionData.lives === 0) {
+      Utils.gameOver();
+    }
+    setTimeout(() => {
+        window.location.href = Utils.getRandomPath();
+    }, 3000);
   }
   // Chrono
   let countdown = 8;

@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function() {
   let countdown = 8;
   const countdownElement = document.getElementById("countdown");
@@ -29,8 +33,13 @@ document.addEventListener("DOMContentLoaded", function() {
   function isCorrect() {
     if (isDark) {
       document.getElementById("result").innerHTML = "Victoire!";
+      Utils.addToScore(10);
     } else {
       document.getElementById("result").innerHTML = "Défaite!";
+      Utils.loseLife();
+    }
+    if (Utils.sessionData.lives === 0) {
+      Utils.gameOver();
     }
   }
 

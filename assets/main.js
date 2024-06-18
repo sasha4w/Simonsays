@@ -1,3 +1,21 @@
+// SOLO SESSION //
+import * as Utils from './utils.js';
+// Objet pour stocker les données de session
+Utils.loadSessionFromLocalStorage();
+console.log("Vies restantes :", Utils.sessionData.lives);
+console.log("Score actuel :", Utils.sessionData.score);
+// Au chargement de la page, charger les données de session si elles existent déjà dans localStorage
+Utils.resetSession();
+console.log("Vies restantes :", Utils.sessionData.lives);
+console.log("Score actuel :", Utils.sessionData.score);
+
+
+
+
+// Sauvegarde les données de session dans localStorage après chaque modification
+// saveSessionToLocalStorage();
+
+
 // PROMPT //
 let deferredPrompt;
 
@@ -60,4 +78,20 @@ setTimeout(function() {
 });
 });
 
-// ROUND //
+
+
+
+// Randomlink //
+// Liste des chemins d'accès possibles
+
+
+// Fonction pour choisir un chemin aléatoire
+
+
+// Fonction exécutée lors du clic sur le bouton
+document.getElementById('randomLink').addEventListener('click', function(event) {
+    event.preventDefault(); // Empêche le lien de suivre le href
+    const randomPath = Utils.getRandomPath();
+    // Redirection vers le chemin d'accès aléatoire
+    window.location.href = randomPath;
+});

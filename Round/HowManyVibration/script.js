@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   let isSubmitted = false;
   const numVibrations = Math.floor(Math.random() * 10) + 1;
@@ -8,12 +12,20 @@ document.addEventListener("DOMContentLoaded", function () {
       .value.trim();
     if (parseInt(vibrationNumber) === numVibrations) {
       document.getElementById("result").innerHTML = "Victoire!";
+      Utils.addToScore(10);
     } else {
       document.getElementById("result").innerHTML = "Incorrect!";
+      Utils.loseLife();
     }
     document.getElementById("vibrationNumber").disabled = true;
     document.getElementById("submitBtn").disabled = true;
     isSubmitted = true;
+    if (Utils.sessionData.lives === 0) {
+      Utils.gameOver();
+    }
+    setTimeout(() => {
+        window.location.href = Utils.getRandomPath();
+    }, 3000);
   }
 
   document

@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   const colors = {
     "#ff0000": "rouge",
@@ -187,12 +191,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const word = document.getElementById("word1").value.trim().toLowerCase();
     if (word === randomWord) {
       document.getElementById("result").innerHTML = "Victoire!";
+      Utils.addToScore(10);
     } else {
       document.getElementById("result").innerHTML = "Incorrect!";
+      Utils.loseLife();
     }
     document.getElementById("word1").disabled = true;
     document.getElementById("submitBtn").disabled = true;
     isSubmitted = true;
+    if (Utils.sessionData.lives === 0) {
+      Utils.gameOver();
+    }
+      setTimeout(() => {
+      window.location.href = Utils.getRandomPath();
+  }, 3000);
+
+
   }
   document.getElementById("submitBtn").addEventListener("click", isCorrect);
   let countdown = 8;
@@ -230,10 +244,4 @@ document
       event.preventDefault(); // Empêche l'action par défaut d'Entrée
       document.getElementById("wordCheck").submit(); // Soumet le formulaire
     }
-  });
-document
-  .getElementById("submitBtn")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Empêche la soumission par défaut du formulaire
-    isCorrect();
   });

@@ -2,12 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Voici le Portfolio de futur développeur web Sasha Rochedix  en recherche d'alternance montrant ses Compétences et Réalisations"
+      content="Jeu reprenant le concept de simon says pour un projet étudiant"
     />
-    <title>Voicecheck</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/favicon72x72.png" />
+    <meta name="theme-color" content="#0078d7" />
+    <title>Voicheck</title>
+    <link rel="stylesheet" type="text/css" href="./../../assets/styles/styles.scss" />
     <script src="./script.js" defer type="module"></script>
   </head>
   <body>
@@ -15,6 +18,11 @@
       <div id="countdown"></div>
     </header>
     <main class="round">
+      <div class="uiPlayer">
+        <p>Vies restantes : <span id="livesCount"></span></p>
+        <p>Score actuel : <span id="scoreDisplay"></span></p>
+      </div>
+      <div class="question"><p>Jacque a dit parle !</p></div>
       <button id="start">Démarrer</button>
     </main>
 

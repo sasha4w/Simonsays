@@ -1,3 +1,7 @@
+import * as Utils from './../../assets/utils.js';
+
+Utils.loadSessionFromLocalStorage();
+Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function() {
     let countdown = 8;
     const countdownElement = document.getElementById("countdown");
@@ -67,11 +71,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (shakeDetected) {
             resultElement.innerHTML = "Victoire!";
+            Utils.addToScore(10);
         } else {
             resultElement.innerHTML = "Perdu!";
+            Utils.loseLife();
         }
         
         startButton.disabled = false;
+        if (Utils.sessionData.lives === 0) {
+            Utils.gameOver();
+          }
+        setTimeout(() => {
+              window.location.href = Utils.getRandomPath();
+          }, 3000);
     };
 
     startButton.addEventListener('click', startGame);
