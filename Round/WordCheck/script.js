@@ -193,6 +193,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fonction pour vérifier si le mot est correct
   function isCorrect() {
     const word = document.getElementById("word1").value.trim().toLowerCase();
+    if (Utils.sessionData.lives === 0) {
+      Utils.gameOver();
+    }
     if (( simonSaysText.innerHTML === "Jacque n'a pas dit écrit le mot" && word !== randomWord) || (simonSaysText.innerHTML === "Jacque a dit écrit le mot" && word === randomWord)) {
       document.getElementById("result").innerHTML = "Victoire !";
       Utils.addToScore(10);
@@ -203,9 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("word1").disabled = true;
     document.getElementById("submitBtn").disabled = true;
     isSubmitted = true;
-    if (Utils.sessionData.lives === 0) {
-      Utils.gameOver();
-    }
+
       setTimeout(() => {
       window.location.href = Utils.getRandomPath();
   }, 3000);
