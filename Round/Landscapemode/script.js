@@ -23,9 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Check if the device is in landscape mode
     const orientationType = window.screen.orientation.type;
+    const jacqueSaid = simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage";
     if (
-      ((simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType !== "landscape-primary" ||
-        simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType !== "landscape-secondary") 
+      ((simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType === "portrait-primary" ||
+        simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType === "portrait-secondary") 
         || (simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage" && orientationType === "landscape-primary" ||
         simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage" && orientationType === "landscape-secondary"))
     ) {
