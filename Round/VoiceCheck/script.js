@@ -44,9 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (Utils.sessionData.lives === 0) {
         Utils.gameOver();
       }
-      setTimeout(() => {
-          window.location.href = Utils.getRandomPath();
-      }, 3000);
+
     };
 
     recognition.onspeechend = () => {
@@ -74,6 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (countdown === 0) {
       clearInterval(countdownInterval);
+      if (Utils.sessionData.lives === 0) {
+        Utils.gameOver();
+      }
+      setTimeout(() => {
+        window.location.href = Utils.getRandomPath();
+    }, 3000);
 
       document.getElementById("submitBtn").disabled = true; // Masquer le bouton
     }
