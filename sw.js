@@ -1,6 +1,8 @@
 self.addEventListener('install', (event) => {
+    console.log('Service Worker: Install Event');
     event.waitUntil(
         caches.open('simon-says-cache').then((cache) => {
+            console.log('Service Worker: Caching Files');
             return cache.addAll([
                 '/',
                 '/index.html',
@@ -23,14 +25,24 @@ self.addEventListener('install', (event) => {
                 '/manifest.json',
                 'vite.config.json'
             ]);
+        }).catch(error => {
+            console.error('Service Worker: Caching Failed', error);
         })
     );
 });
 
 self.addEventListener('fetch', (event) => {
+    console.log('Service Worker: Fetch Event', event.request.url);
     event.respondWith(
         caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
+            if (response) {
+                console.log('Service Worker: Cache Hit', event.request.url);
+                return response;
+            }
+            console.log('Service Worker: Cache Miss', event.request.url);
+            return fetch(event.request);
+        }).catch(error => {
+            console.error('Service Worker: Fetch Failed', error);
         })
     );
 });

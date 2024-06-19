@@ -16,46 +16,48 @@ console.log("Score actuel :", Utils.sessionData.score);
 // saveSessionToLocalStorage();
 
 
-window.addEventListener("beforeinstallprompt", (e) => {
-  // Empêcher l'affichage automatique de la bannière d'installation
-  e.preventDefault();
-  // Stocker l'événement pour l'utiliser plus tard
-  deferredPrompt = e;
-  // Afficher le bouton d'installation
-  const installButton = document.getElementById("installButton");
-  if (installButton) {
-      installButton.style.display = "block";
+let deferredPrompt;
 
-      installButton.addEventListener("click", () => {
-          // Afficher la bannière d'installation native
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-              if (choiceResult.outcome === "accepted") {
-                  console.log("L'utilisateur a accepté l'installation");
-                  // Demander la permission de notification après l'acceptation de l'installation
-                  requestNotificationPermission();
-              } else {
-                  console.log("L'utilisateur a refusé l'installation");
-              }
-              deferredPrompt = null;
-          });
-      });
-  }
+window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('beforeinstallprompt event fired');
+    // Empêcher l'affichage automatique de la bannière d'installation
+    e.preventDefault();
+    // Stocker l'événement pour l'utiliser plus tard
+    deferredPrompt = e;
+    // Afficher le bouton d'installation
+    const installButton = document.getElementById('installButton');
+    if (installButton) {
+        installButton.style.display = 'block';
+
+        installButton.addEventListener('click', () => {
+            // Afficher la bannière d'installation native
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('L\'utilisateur a accepté l\'installation');
+                    // Demander la permission de notification après l'acceptation de l'installation
+                    requestNotificationPermission();
+                } else {
+                    console.log('L\'utilisateur a refusé l\'installation');
+                }
+                deferredPrompt = null;
+            });
+        });
+    }
 });
 
 // Fonction pour demander la permission de notification
 function requestNotificationPermission() {
-  if (Notification.permission === "default") {
-      Notification.requestPermission().then((permission) => {
-          if (permission === "granted") {
-              console.log("Permission de notification accordée.");
-          } else {
-              console.log("Permission de notification refusée.");
-          }
-      });
-  }
+    if (Notification.permission === 'default') {
+        Notification.requestPermission().then((permission) => {
+            if (permission === 'granted') {
+                console.log('Permission de notification accordée.');
+            } else {
+                console.log('Permission de notification refusée.');
+            }
+        });
+    }
 }
-
 // ANIMATION MENU //
 TweenMax.staggerFrom(
 ".btn",
