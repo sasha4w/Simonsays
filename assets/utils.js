@@ -3,7 +3,6 @@ let sessionData = {
     score: 0
 };
 const baseUrl = `${window.location.protocol}//${window.location.host}/`;
-const currentPath = window.location.pathname.replace(baseUrl, '');
 const paths = [
     "Round/WordCheck/index.html",
     "Round/Chifoumi/index.html",

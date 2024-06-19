@@ -5,11 +5,97 @@
     flex-direction: column;
     height: 95dvh;
 }
+.round{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    gap:0.8rem 
+}
 #countdown{
     font-family: var(--title-police);
     font-size: 6rem;
     color: var(--cta-color);
     filter: drop-shadow(2px 5px 5px rgba(0,0,0,0.63));
+}
+
+// Radio input //
+ 
+input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        position: relative;
+        top: 13.33333px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        transition: all 0.15s ease-out 0s;
+        background: #cbd1d8;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 0.5rem;
+        outline: none;
+        position: relative;
+        z-index: 1000;
+      }
+      input[type="radio"]:hover {
+        background: #9faab7;
+      }
+      input[type="radio"]:checked {
+        background: var(--second-color);
+      }
+      input[type="radio"]:checked::before {
+        width: 40px;
+        height: 40px;
+        display:flex;
+        font-size: 25px;
+        font-weight:bold;
+        position: absolute;
+        align-items:center;
+        justify-content:center;
+      }
+      input[type="radio"]:checked::after {
+        width: 40px;
+        height: 40px;
+        display:flex;
+        content: '\f00c';
+        font-size: 25px;
+        font-weight:bold;
+        position: absolute;
+        align-items:center;
+        justify-content:center;
+        font-family:'Font Awesome 5 Free';
+      }
+      input[type="radio"] {
+        border-radius: 50%;
+      }
+      input[type="radio"]::after {
+        border-radius: 50%;
+      }
+
+label{
+    font-size: 1.5rem;
+}
+#word1, #vibrationNumber{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fond transparent */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+#wordCheck{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 @media only screen and (orientation: portrait) {
 

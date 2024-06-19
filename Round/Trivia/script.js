@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       label.htmlFor = `choice${index}`;
       label.textContent = choice;
-
+      choiceContainer.classList.add("ma-classe-1", "ma-classe-2");
       choiceContainer.appendChild(radioInput);
       choiceContainer.appendChild(label);
       choicesElement.appendChild(choiceContainer);

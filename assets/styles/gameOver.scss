@@ -1,3 +1,13 @@
+.gameOver__header{
+    gap:0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1rem;
+    height: 95dvh;
+    width: 100%;
+}
 @media only screen and (orientation: portrait) {
 
     .gameOver {
