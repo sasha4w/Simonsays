@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     recognition.onresult = (event) => {
       // Vérifie si quelque chose a été dit
-      if (( simonSaysText.innerHTML === "Jacque n'a pas dit parle" && event.results.length == 0) || ( simonSaysText.innerHTML === "Jacque a dit parle" && event.results.length > 0)) {
+      if (( simonSaysText.innerHTML === "Jacque n'a pas dit parle" && resultParagraph.textContent === "Écoute en cours...") || ( simonSaysText.innerHTML === "Jacque a dit parle" && event.results.length > 0)) {
         
         resultParagraph.textContent = `Victoire !`;
         Utils.addToScore(10);
@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     recognition.onend = () => {
       if (resultParagraph.textContent === "Écoute en cours...") {
         resultParagraph.textContent = "Défaite ! Vous n'avez rien dit.";
+        Utils.loseLife();
       }
     };
   }
