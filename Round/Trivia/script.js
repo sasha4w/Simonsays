@@ -4,6 +4,12 @@ Utils.loadSessionFromLocalStorage();
 Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   // Tableau des questions et choix de réponses
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit répond juste à la question";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit répond juste à la question";
+}
   const questions = [
     {
       question: "Quel est le plus grand océan du monde ?",
@@ -319,24 +325,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // Correction
   function isCorrect(selectedIndex, correctIndex) {
     const resultElement = document.getElementById("result");
-    const isCorrect = selectedIndex === correctIndex;
-    resultElement.textContent = isCorrect ? "Correct!" : "Incorrect!";
+    const isShouldSucceed = simonSaysText.innerHTML === "Jacque n'a pas dit répond juste à la question";
+
+    // Condition pour déterminer si la réponse est correcte en fonction de simonSaysText.innerHTML
+    const isCorrect = isShouldSucceed ? selectedIndex !== correctIndex : selectedIndex === correctIndex;
+
+    resultElement.textContent = isCorrect ? "Victoire !" : "Perdu !";
 
     // Désactiver tous les boutons radio après la sélection
     const choices = document.getElementsByName("choices");
-    choices.forEach((choice) => (choice.disabled = true));
+    Array.from(choices).forEach((choice) => (choice.disabled = true));
+
+    // Actions à entreprendre en fonction de la réponse
     if (isCorrect) {
       Utils.addToScore(10);
     } else {
       Utils.loseLife();
+      if (Utils.sessionData.lives === 0) {
+        Utils.gameOver();
+      }
     }
-    if (Utils.sessionData.lives === 0) {
-      Utils.gameOver();
-    }
+
+    // Redirection après 3 secondes
     setTimeout(() => {
-        window.location.href = Utils.getRandomPath();
+      window.location.href = Utils.getRandomPath();
     }, 3000);
   }
+
   // Chrono
   let countdown = 8;
   const countdownElement = document.getElementById("countdown");

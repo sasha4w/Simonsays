@@ -7,7 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
   let countdown = 8;
   const countdownElement = document.getElementById("countdown");
   countdownElement.innerHTML = countdown;
-  let isSubmitted = false;
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit écrit soit en charge";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit écrit soit en charge";
+}
 
   const countdownInterval = setInterval(() => {
     countdown--;
@@ -28,11 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to check battery status
   function checkBatteryStatus() {
     navigator.getBattery().then(function(battery) {
-      if (battery.charging) {
-        document.getElementById("result").innerHTML = "Victoire! La batterie est en charge.";
+      if ((simonSaysText.innerHTML === "Jacque n'a pas dit écrit soit en charge" && !battery.charging) || (simonSaysText.innerHTML === "Jacque a dit écrit soit en charge" && battery.charging)) {
+        document.getElementById("result").innerHTML = "Victoire !";
         Utils.addToScore(10);
       } else {
-        document.getElementById("result").innerHTML = "Défaite! La batterie n'est pas en charge.";
+        document.getElementById("result").innerHTML = "Défaite !";
         Utils.loseLife();
       }
     });

@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .value.trim();
     if ((simonSaysText.innerHTML === "Jacque a dit écrit le nombre de vibration" && parseInt(vibrationNumber) === numVibrations) 
       || (simonSaysText.innerHTML === "Jacque n'a pas dit écrit le nombre de vibration" && parseInt(vibrationNumber) !== numVibrations)) {
-      document.getElementById("result").innerHTML = "Victoire!";
+      document.getElementById("result").innerHTML = "Victoire !";
       Utils.addToScore(10);
     } else {
-      document.getElementById("result").innerHTML = "Incorrect!";
+      document.getElementById("result").innerHTML = "Perdu !";
       Utils.loseLife();
     }
     document.getElementById("vibrationNumber").disabled = true;

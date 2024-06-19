@@ -6,7 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Chifoumi
   const buttons = document.querySelectorAll("button");
   let isSubmitted = false; // Drapeau pour suivre si le joueur a fait un choix
-
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit gagne le shifoumi";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit gagne le shifoumi";
+}
   function disableButtons() {
     // Désactiver les boutons une fois qu'un choix est fait
     buttons.forEach((button) => (button.disabled = true));

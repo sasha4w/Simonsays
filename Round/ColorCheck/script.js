@@ -17,7 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const randomHexColor =
     colorKeys[Math.floor(Math.random() * colorKeys.length)];
   const colorName = colors[randomHexColor];
-
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit écrit la couleur";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit écrit la couleur";
+}
   document.getElementById("wordAsked").style.color = randomHexColor;
 
   const words = [
@@ -50,11 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function isCorrect() {
     const word = document.getElementById("word1").value.trim().toLowerCase();
-    if (word === colorName) {
-      document.getElementById("result").innerHTML = "Victoire!";
+    if (( simonSaysText.innerHTML === "Jacque n'a pas dit écrit la couleur" && word !== colorName) || (simonSaysText.innerHTML === "Jacque a dit écrit la couleur" && word === colorName)) {
+      document.getElementById("result").innerHTML = "Victoire !";
       Utils.addToScore(10);
     } else {
-      document.getElementById("result").innerHTML = "Incorrect!";
+      document.getElementById("result").innerHTML = "Perdu !";
       Utils.loseLife();
     }
     document.getElementById("word1").disabled = true;

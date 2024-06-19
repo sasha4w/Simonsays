@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
   countdownElement.innerHTML = countdown;
   
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit met ton appareil en paysage";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit met ton appareil en paysage";
+}
   const countdownInterval = setInterval(() => {
   countdown--;
   countdownElement.innerHTML = countdown;
@@ -18,13 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if the device is in landscape mode
     const orientationType = window.screen.orientation.type;
     if (
-      orientationType === "landscape-primary" ||
-      orientationType === "landscape-secondary"
+      ((simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType !== "landscape-primary" ||
+        simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType !== "landscape-secondary") 
+        || (simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage" && orientationType === "landscape-primary" ||
+        simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage" && orientationType === "landscape-secondary"))
     ) {
-      resultElement.innerHTML = "Victoire! Vous êtes en paysage.";
+      resultElement.innerHTML = "Victoire !";
       Utils.addToScore(10);
     } else {
-      resultElement.innerHTML = "Perdu! Vous n'êtes pas en paysage.";
+      resultElement.innerHTML = "Perdu !";
       Utils.loseLife();
     }
     if (Utils.sessionData.lives === 0) {

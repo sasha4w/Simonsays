@@ -5,7 +5,13 @@ Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   let clickCount = 0;
   let requiredClicks;
-  let countdown = 8;
+  let countdown = 6;
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit clique autant de fois demandé";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit clique autant de fois demandé";
+}
   const countdownElement = document.getElementById("countdown");
   countdownElement.innerHTML = countdown;
   let countdownInterval;
@@ -14,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function startGame() {
   // Réinitialiser le jeu
   clickCount = 0;
-  requiredClicks = Math.floor(Math.random() * 35) + 5;
+  requiredClicks = Math.floor(Math.random() * 25) + 5;
   document.getElementById("clickCount").innerText = clickCount;
 document.getElementById(
   "instructions"
@@ -25,34 +31,32 @@ document.getElementById("result").innerText = "";
 countdownInterval = setInterval(() => {
   countdown--;
   countdownElement.innerHTML = countdown;
-
   if (countdown === 0) {
     clearInterval(countdownInterval);
-    endGame(false); // Vous avez perdu si le temps est écoulé
-    document.getElementById("clickButton").disabled = true;
+    endGame(); // Appel à endGame() lorsque le compte à rebours atteint zéro
   }
 }, 800);
+
 }
 
 // Fonction pour gérer le clic sur le bouton
 function handleClick() {
 clickCount++;
 document.getElementById("clickCount").innerText = clickCount;
-if (clickCount >= requiredClicks) {
-  endGame(true);
 }
-}
+
+
 
 // Fonction pour terminer le jeu
-function endGame(victory) {
-  clearInterval(countdownInterval); // Arrête le compte à rebours
-
-  if (victory) {
-      document.getElementById("result").innerText = "Vous avez gagné!";
+function endGame() {
+  if ( ( simonSaysText.innerHTML === "Jacque n'a pas dit clique autant de fois demandé" && clickCount < requiredClicks) 
+    || (simonSaysText.innerHTML === "Jacque a dit clique autant de fois demandé" && clickCount >= requiredClicks)) {
+      clearInterval(countdownInterval); // Arrête le compte à rebours
+      document.getElementById("result").innerText = "Gagné !";
       Utils.addToScore(10);
-
-  } else {
-      document.getElementById("result").innerText = "Vous avez perdu.";
+  }
+ else {
+      document.getElementById("result").innerText = "Perdu !";
       Utils.loseLife();
 
 

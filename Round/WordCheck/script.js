@@ -11,11 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
     "#d900ff": "violet",
     "#ff99c2": "rose",
   };
-
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit écrit le mot";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit écrit le mot";
+}
   const colorKeys = Object.keys(colors); // Obtenir les clés de l'objet
   const randomHexColor =
     colorKeys[Math.floor(Math.random() * colorKeys.length)]; // Sélectionner une clé aléatoire
-  const colorName = colors[randomHexColor]; // Récupérer le nom de la couleur correspondante
 
   document.getElementById("wordAsked").style.color = randomHexColor;
   // Liste de mots parmi lesquels choisir aléatoirement
@@ -189,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fonction pour vérifier si le mot est correct
   function isCorrect() {
     const word = document.getElementById("word1").value.trim().toLowerCase();
-    if (word === randomWord) {
+    if (( simonSaysText.innerHTML === "Jacque n'a pas dit écrit le mot" && word !== randomWord) || (simonSaysText.innerHTML === "Jacque a dit écrit le mot" && word === randomWord)) {
       document.getElementById("result").innerHTML = "Victoire!";
       Utils.addToScore(10);
     } else {

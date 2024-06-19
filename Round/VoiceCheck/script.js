@@ -3,15 +3,12 @@ import * as Utils from './../../assets/utils.js';
 Utils.loadSessionFromLocalStorage();
 Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
-  // Correction
-  function isCorrect() {
-    if (word === randomWord) {
-      document.getElementById("result").innerHTML = "Victoire!";
-    } else {
-      document.getElementById("result").innerHTML = "Incorrect!";
-    }
-  }
-
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacque n'a pas dit parle";
+} else {
+    simonSaysText.innerHTML = "Jacque a dit parle";
+}
   // Voicheck
   // Vérification de la compatibilité du navigateur
   if (!("webkitSpeechRecognition" in window)) {
@@ -35,13 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     recognition.onresult = (event) => {
       // Vérifie si quelque chose a été dit
-      if (event.results.length > 0) {
-        const transcript = event.results[0][0].transcript;
-        resultParagraph.textContent = `Victoire ! Vous avez dit : ${transcript}`;
+      if (( simonSaysText.innerHTML === "Jacque n'a pas dit parle" && event.results.length == 0) || ( simonSaysText.innerHTML === "Jacque a dit parle" && event.results.length > 0)) {
+        
+        resultParagraph.textContent = `Victoire !`;
         Utils.addToScore(10);
 
       } else {
-        resultParagraph.textContent = "Défaite ! Vous n'avez rien dit.";
+        resultParagraph.textContent = "Défaite !";
         Utils.loseLife();
       }
       if (Utils.sessionData.lives === 0) {
