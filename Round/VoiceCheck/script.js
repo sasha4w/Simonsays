@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (countdown === 0) {
       clearInterval(countdownInterval);
 
-      document.getElementById("word1").disabled = true;
       document.getElementById("submitBtn").disabled = true; // Masquer le bouton
     }
   }, 800);
