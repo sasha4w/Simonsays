@@ -194,10 +194,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function isCorrect() {
     const word = document.getElementById("word1").value.trim().toLowerCase();
     if (( simonSaysText.innerHTML === "Jacque n'a pas dit écrit le mot" && word !== randomWord) || (simonSaysText.innerHTML === "Jacque a dit écrit le mot" && word === randomWord)) {
-      document.getElementById("result").innerHTML = "Victoire!";
+      document.getElementById("result").innerHTML = "Victoire !";
       Utils.addToScore(10);
     } else {
-      document.getElementById("result").innerHTML = "Incorrect!";
+      document.getElementById("result").innerHTML = "Perdu !";
       Utils.loseLife();
     }
     document.getElementById("word1").disabled = true;

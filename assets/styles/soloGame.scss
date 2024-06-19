@@ -1,3 +1,16 @@
+.soloGame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95dvh;
+}
+#countdown{
+    font-family: var(--title-police);
+    font-size: 6rem;
+    color: var(--cta-color);
+    filter: drop-shadow(2px 5px 5px rgba(0,0,0,0.63));
+}
 @media only screen and (orientation: portrait) {
 
     .soloGame {

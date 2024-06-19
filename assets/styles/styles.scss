@@ -120,6 +120,7 @@ p,
 span {
   font-family: var(--text-police);
   font-size: 1.5rem;
+  text-align: center;
 }
 li {
   font-family: var(--text-police);
@@ -128,6 +129,9 @@ a {
   font-family: var(--text-police);
   color: var(--link-color);
   }
+div {
+  font-family: var(--text-police);
+}
 .levelTest{
   color: var(--black);
   background-color: var(--cta-color);
@@ -176,11 +180,11 @@ a {
   height: 100vh;
 }
 
-#countdown, #result, #instructions, #clickCount {
-  color: var(--black);
-  margin: 10px;
-  font-size: 24px;
-}
+// #countdown, #result, #instructions, #clickCount {
+//   color: var(--black);
+//   margin: 10px;
+//   font-size: 24px;
+// }
 
 #clickButton {
   margin-top: 20px;
