@@ -21,7 +21,7 @@
 }
 
 // Radio input //
- 
+
 input[type="radio"] {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -98,6 +98,9 @@ input{
     font-size: 2rem;
     width: 200px;
     font-family: var(--text-police);
+}
+#question{
+    font-size: 2rem;
 }
 #wordCheck{
     display: flex;
