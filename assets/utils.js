@@ -3,6 +3,7 @@ let sessionData = {
     score: 0
 };
 const baseUrl = `${window.location.protocol}//${window.location.host}/`;
+const currentPath = window.location.pathname.replace(baseUrl, '');
 const paths = [
     "Round/WordCheck/index.html",
     "Round/Chifoumi/index.html",
@@ -50,9 +51,10 @@ function loadSessionFromLocalStorage() {
         sessionData = JSON.parse(storedSessionData);
     }
 }
-function getRandomPath() {
-    const randomIndex = Math.floor(Math.random() * paths.length);
-    const randomPath = baseUrl + paths[randomIndex];
+function getRandomPath(currentPath) {
+    const filteredPaths = paths.filter(path => path !== currentPath);
+    const randomIndex = Math.floor(Math.random() * filteredPaths.length);
+    const randomPath = baseUrl + filteredPaths[randomIndex];
     return randomPath;
 }
 function gameOver() {

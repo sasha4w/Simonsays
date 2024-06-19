@@ -1,0 +1,23 @@
+@media only screen and (orientation: portrait) {
+
+    .gameOver {
+      background-image: url(./../img/gameOverHorizontal.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-color: var(--main-color) ;
+    }
+    /* Ajoutez ici d'autres styles */
+  }
+  @media only screen  and (orientation: landscape) {
+  
+    .gameOver {
+      background-image: url(./../img/gameOverHorizontal.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+    
+  }

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let gameStartTime;
     const shakeWindowStart = 2; // Shake window starts at 2 seconds
     const shakeWindowEnd = 3; // Shake window ends at 3 seconds
-
+    const shouldSucceed = () => Math.random() < 0.25;
     const startGame = () => {
         shakeDetected = false;
         countdown = 8;
@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
         resultElement.innerHTML = '';
         startButton.disabled = true;
         gameStartTime = new Date().getTime(); // Record the start time of the game
+        if (shouldSucceed()) {
+            simonSaysText.innerHTML = "Jacque n'a pas dit secoue ton appareil";
+        } else {
+            simonSaysText.innerHTML = "Jacque a dit secoue ton appareil";
+        }
 
         // Start countdown timer
         countdownInterval = setInterval(() => {
@@ -69,13 +74,14 @@ document.addEventListener("DOMContentLoaded", function() {
         clearTimeout(timeout);
         window.removeEventListener('devicemotion', handleShake);
 
-        if (shakeDetected) {
-            resultElement.innerHTML = "Victoire!";
-            Utils.addToScore(10);
-        } else {
-            resultElement.innerHTML = "Perdu!";
-            Utils.loseLife();
-        }
+        if ((simonSaysText.innerHTML === "Jacque a dit secoue ton appareil" && shakeDetected) ||
+        (simonSaysText.innerHTML === "Jacque n'a pas dit secoue ton appareil" && !shakeDetected)) {
+        resultElement.innerHTML = "Victoire!";
+        Utils.addToScore(10);
+    } else {
+        resultElement.innerHTML = "Perdu!";
+        Utils.loseLife();
+    }
         
         startButton.disabled = false;
         if (Utils.sessionData.lives === 0) {

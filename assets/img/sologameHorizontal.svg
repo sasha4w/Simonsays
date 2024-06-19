@@ -1,0 +1,18 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_20_74)">
+<rect width="1080" height="1920" transform="translate(1920) rotate(90)" fill="#D39ED5"/>
+<circle cx="433" cy="-1.31134e-05" r="300" transform="rotate(90 433 -1.31134e-05)" fill="#D9D9D9"/>
+<circle cx="1651" cy="813" r="312" transform="rotate(90 1651 813)" fill="#D9D9D9"/>
+<circle cx="464" cy="-1.31134e-05" r="300" transform="rotate(90 464 -1.31134e-05)" fill="#FF9FB6"/>
+<path d="M1569.5 1072.5C1486.66 1072.5 1419.5 1005.34 1419.5 922.5C1419.5 839.657 1486.66 772.5 1569.5 772.5C1652.34 772.5 1719.5 839.657 1719.5 922.5C1719.5 1005.34 1652.34 1072.5 1569.5 1072.5Z" fill="#FF9FB6" stroke="#FF9FB6" stroke-width="25"/>
+<path d="M723.5 988.365L-1055.5 1976.5L-1055.5 0.230391L723.5 988.365Z" fill="#D9D9D9"/>
+<path d="M764 1092L-1015 2080.13L-1015 103.865L764 1092Z" fill="#FF9FB6"/>
+<path d="M1732 340L749.927 -1361L2714.07 -1361L1732 340Z" fill="#D9D9D9"/>
+<path d="M1879.5 263L998.319 -1263.25L2760.68 -1263.25L1879.5 263Z" fill="#FF9FB6"/>
+</g>
+<defs>
+<clipPath id="clip0_20_74">
+<rect width="1080" height="1920" fill="white" transform="translate(1920) rotate(90)"/>
+</clipPath>
+</defs>
+</svg>
