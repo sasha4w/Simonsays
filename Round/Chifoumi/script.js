@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
         Résultat : ${resultat}
       `;
       isSubmitted = true; // Marquer que le joueur a fait un choix
+      setTimeout(() => {
+        if (Utils.sessionData.lives === 0) {
+          Utils.gameOver();
+        }
+      }, 1000);
       disableButtons(); // Appel de la fonction pour désactiver les boutons
     });
   }
@@ -58,15 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (countdown === 0) {
       clearInterval(countdownInterval);
       if (!isSubmitted) {
+        Utils.loseLife();
         // Définir automatiquement le résultat à "Perdu" si le temps est écoulé
         document.querySelector(".resultat").innerHTML = `
           Résultat : Perdu (Temps écoulé)
         `;
         disableButtons(); // Appel de la fonction pour désactiver les boutons
       }
-      if (Utils.sessionData.lives === 0) {
-        Utils.gameOver();
-      }
+
       setTimeout(() => {
           window.location.href = Utils.getRandomPath();
       }, 3000);

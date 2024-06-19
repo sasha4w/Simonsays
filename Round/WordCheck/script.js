@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "#1500ff": "bleu",
     "#f2ff00": "jaune",
     "#d900ff": "violet",
-    "#ff99c2": "rose",
+    "#ff8000 ": "orange",
   };
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {

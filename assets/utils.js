@@ -50,11 +50,26 @@ function loadSessionFromLocalStorage() {
         sessionData = JSON.parse(storedSessionData);
     }
 }
+let lastPath = null;
+
 function getRandomPath(currentPath) {
-    const filteredPaths = paths.filter(path => path !== currentPath);
+    // Filtre les chemins pour exclure le chemin actuel et le dernier chemin sélectionné
+    const filteredPaths = paths.filter(path => path !== currentPath && path !== lastPath);
+    
+    // Si après le filtrage il ne reste plus qu'un chemin, on le sélectionne automatiquement
+    if (filteredPaths.length === 1) {
+        lastPath = filteredPaths[0];
+        return baseUrl + lastPath;
+    }
+
+    // Sinon, on choisit un chemin au hasard parmi les chemins restants
     const randomIndex = Math.floor(Math.random() * filteredPaths.length);
-    const randomPath = baseUrl + filteredPaths[randomIndex];
-    return randomPath;
+    const randomPath = filteredPaths[randomIndex];
+
+    // Met à jour le buffer avec le chemin choisi
+    lastPath = randomPath;
+
+    return baseUrl + randomPath;
 }
 function gameOver() {
     window.location.href = `${baseUrl}gameOver.html`;
