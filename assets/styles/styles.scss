@@ -108,6 +108,7 @@ h2 {
   font-size: 5rem;
   margin: 2rem;
   filter: drop-shadow(2px 5px 5px rgba(0,0,0,0.63));
+  text-align: center;
 }
 h3 {
   font-family: var(--text-police);
@@ -147,10 +148,15 @@ div {
   flex-direction: column;
   gap: 2rem;
 }
-.levelWrapper{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap:2rem;
+.levelWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Cet espace s'appliquera entre les éléments */
+}
+
+.levelWrapper > * {
+  flex: 1 1 calc(33.333% - 2rem); /* Pour avoir trois éléments par ligne avec un espace de 2rem entre eux */
+  box-sizing: border-box; /* Assure que le padding et la bordure sont inclus dans la largeur et la hauteur */
 }
 .levelTest:active {
   animation: bounce 0.3s;
