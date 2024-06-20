@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to check battery status
   function checkBatteryStatus() {
     navigator.getBattery().then(function(battery) {
-      if ((simonSaysText.innerHTML === "Jacque n'a pas dit écrit soit en charge" && !battery.charging) || (simonSaysText.innerHTML === "Jacque a dit écrit soit en charge" && battery.charging)) {
+      if ((simonSaysText.innerHTML === "Jacque n'a pas dit soit en charge" && !battery.charging) || (simonSaysText.innerHTML === "Jacque a dit soit en charge" && battery.charging)) {
         document.getElementById("result").innerHTML = "Victoire !";
         Utils.addToScore(10);
       } else {
