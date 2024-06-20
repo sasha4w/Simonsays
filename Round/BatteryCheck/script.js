@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
   countdownElement.innerHTML = countdown;
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit écrit soit en charge";
+    simonSaysText.innerHTML = "Jacque n'a pas dit soit en charge";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit écrit soit en charge";
+    simonSaysText.innerHTML = "Jacque a dit soit en charge";
 }
 
   const countdownInterval = setInterval(() => {

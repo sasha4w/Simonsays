@@ -1,6 +1,6 @@
 # SimonSays
 Pour utiliser l'ensemble de l'application il est fortement conseillé
-d'utiliser chrome sur téléphone.
+d'utiliser chrome sur téléphone, pour profiter des épreuves un maximum.
 Je voulais initialement faire une sorte dynamic routing pour éviter les nombreuses
 redirection de page. Avec des recherches, le plus simple était soit d'utiliser un 
 Framework soit de faire des intéractions avec le DOM en js natif.
