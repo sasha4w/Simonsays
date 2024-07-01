@@ -16,6 +16,20 @@ console.log("Score actuel :", Utils.sessionData.score);
 // saveSessionToLocalStorage();
 
 
+
+//Lancement musique //
+
+const audio = document.getElementById('bgm');
+
+    function playAudio() {
+        audio.play();
+    }
+
+    function pauseAudio() {
+        audio.pause();
+    }
+
+
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
