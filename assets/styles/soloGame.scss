@@ -11,6 +11,7 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     gap:0.8rem 
 }
 #countdown{
@@ -19,6 +20,25 @@
     color: var(--cta-color);
     filter: drop-shadow(2px 5px 5px rgba(0,0,0,0.63));
 }
+// UI PLAYER //
+.uiPlayer{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.uiPlayer p {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#livesCount, #scoreDisplay {
+  filter: drop-shadow(2px 5px 5px rgba(0,0,0,0.63));
+  text-align: center;
+  color: var(--cta-color);
+  font-family: var(--title-police);}
+
+/////////////
 
 // Radio input //
 

@@ -14,17 +14,20 @@
     <script src="./script.js" defer type="module"></script>
   </head>
   <body class="soloGame">
+    <audio id="bgm" src="/assets/music/mainMenuBGM.ogg" autoplay loop></audio>
     <header>
       <div id="countdown"></div>
     </header>
     <main class="round">
-      <p>Vies restantes : <span id="livesCount"></span></p>
-      <p>Score actuel : <span id="scoreDisplay"></span></p>
+      <div class="uiPlayer">
+        <p>Vies : <span id="livesCount"></span></p>
+        <p>Score : <span id="scoreDisplay"></span></p>
+      </div>
+      <p id="result"></p>
         <div class="question"><p id="simonSaysText"></p></div>
         <p id="instructions"></p>
         <p>Nombre de clics: <span id="clickCount">0</span></p>
         <button id="clickButton" class="btn">Cliquez-moi</button>
-      <p id="result"></p>
     </main>
   </body>
 </html>

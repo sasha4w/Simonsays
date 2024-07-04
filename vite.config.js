@@ -1,8 +1,9 @@
 // vite.config.js
 import { resolve } from "path";
 import { defineConfig } from "vite";
-
+import pugPlugin from 'vite-plugin-pug';
 export default defineConfig({
+  plugins: [pugPlugin()],
   build: {
     rollupOptions: {
       input: {
