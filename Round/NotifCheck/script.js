@@ -9,7 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
   const countdownElement = document.getElementById("countdown");
   const resultElement = document.getElementById("result");
   let isClicked = false;
-
+  const shouldSucceed = () => Math.random() < 0.25;
+  if (shouldSucceed()) {
+    simonSaysText.innerHTML = "Jacques n'a pas dit de cliquer sur la notification";
+} else {
+    simonSaysText.innerHTML = "Jacques a dit de cliquer sur la notification";
+}
   countdownElement.innerHTML = countdown;
 
   // Request notification permission
@@ -31,19 +36,21 @@ document.addEventListener("DOMContentLoaded", function() {
         icon: "icon.png" // Ensure icon.png is correctly located
       });
 
-      notification.onclick = () => {
-        if (!isClicked) {
-          isClicked = true;
+     notification.onclick = () => {
+      if (!isClicked) {
+        isClicked = true;
+        // Vérifiez le texte pour déterminer le résultat
+        if (simonSaysText.innerHTML === "Jacques a dit de cliquer sur la notification") {
           resultElement.innerHTML = "Victoire!";
-          clearInterval(countdownInterval);
           Utils.addToScore(10);
-        }
+        } 
+      }
       };
     }
   }
 
-  // Show the notification after a random time between 5 to 8 seconds
-  const notificationDelay = Math.floor(Math.random() * 3000) + 5000;
+  // Show the notification after a random time between 5 to 6 seconds
+  const notificationDelay = Math.floor(Math.random() * 3000) + 3000;
   console.log("Notification will appear after", notificationDelay / 1000, "seconds");
   setTimeout(showNotification, notificationDelay);
 
@@ -54,13 +61,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (countdown === 0) {
       clearInterval(countdownInterval);
-      if (!isClicked) {
+      if (!isClicked && simonSaysText.innerHTML === "Jacques n'a pas dit de cliquer sur la notification") {
+        resultElement.innerHTML = "Victoire!";
+        Utils.addToScore(10);
+      } 
+      if (!isClicked && simonSaysText.innerHTML == "Jacques a dit de cliquer sur la notification" || isClicked == true && simonSaysText.innerHTML == "Jacques n'a pas dit de cliquer sur la notification") {
         resultElement.innerHTML = "Défaite!";
         Utils.loseLife();
         if (Utils.sessionData.lives === 0) {
           Utils.gameOver();
         }
       }
+      setTimeout(() => {
+        window.location.href = Utils.getRandomPath();
+    }, 3000);
 
     }
   }, 1000);

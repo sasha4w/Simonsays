@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let isSubmitted = false; // Drapeau pour suivre si le joueur a fait un choix
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit gagne le shifoumi";
+    simonSaysText.innerHTML = "Jacques n'a pas dit gagne le shifoumi";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit gagne le shifoumi";
+    simonSaysText.innerHTML = "Jacques a dit gagne le shifoumi";
 }
   function disableButtons() {
     // Désactiver les boutons une fois qu'un choix est fait
@@ -31,10 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
         (joueur === "Feuilles" && robot === "Pierre")
       ) {
         resultat = "Gagné";
-        Utils.addToScore(10);
+        if(simonSaysText.innerHTML == "Jacques n'a pas dit gagne le shifoumi"){
+          Utils.loseLife();
+        }
+        else{
+          Utils.addToScore(10);
+        }
       } else {
         resultat = "Perdu";
-        Utils.loseLife();
+        if(simonSaysText.innerHTML == "Jacques n'a pas dit gagne le shifoumi"){
+          Utils.addToScore(10);
+        }
+        else{
+          Utils.loseLife();
+        }
       }
       document.querySelector(".resultat").innerHTML = `
         Joueur : ${joueur} </br>

@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Tableau des questions et choix de réponses
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit répond juste à la question";
+    simonSaysText.innerHTML = "Jacques n'a pas dit répond juste à la question";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit répond juste à la question";
+    simonSaysText.innerHTML = "Jacques a dit répond juste à la question";
 }
   const questions = [
     {
@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Correction
   function isCorrect(selectedIndex, correctIndex) {
     const resultElement = document.getElementById("result");
-    const isShouldSucceed = simonSaysText.innerHTML === "Jacque n'a pas dit répond juste à la question";
+    const isShouldSucceed = simonSaysText.innerHTML === "Jacques n'a pas dit répond juste à la question";
 
     // Condition pour déterminer si la réponse est correcte en fonction de simonSaysText.innerHTML
     const isCorrect = isShouldSucceed ? selectedIndex !== correctIndex : selectedIndex === correctIndex;

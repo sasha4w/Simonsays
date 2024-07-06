@@ -5,9 +5,9 @@ Utils.updateUI();
 document.addEventListener("DOMContentLoaded", function () {
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit parle";
+    simonSaysText.innerHTML = "Jacques n'a pas dit parle";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit parle";
+    simonSaysText.innerHTML = "Jacques a dit parle";
 }
   // Voicheck
   // Vérification de la compatibilité du navigateur
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     recognition.onresult = (event) => {
       // Vérifie si quelque chose a été dit
-      if (( simonSaysText.innerHTML === "Jacque n'a pas dit parle" && event.results.length == 0) || ( simonSaysText.innerHTML === "Jacque a dit parle" && event.results.length > 0)) {
+      if (( simonSaysText.innerHTML === "Jacques n'a pas dit parle" && event.results.length == 0) || ( simonSaysText.innerHTML === "Jacques a dit parle" && event.results.length > 0)) {
         
         resultParagraph.textContent = `Victoire !`;
         Utils.addToScore(10);

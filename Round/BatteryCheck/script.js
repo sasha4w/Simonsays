@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
   countdownElement.innerHTML = countdown;
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit soit en charge";
+    simonSaysText.innerHTML = "Jacques n'a pas dit soit en charge";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit soit en charge";
+    simonSaysText.innerHTML = "Jacques a dit soit en charge";
 }
 
   const countdownInterval = setInterval(() => {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to check battery status
   function checkBatteryStatus() {
     navigator.getBattery().then(function(battery) {
-      if ((simonSaysText.innerHTML === "Jacque n'a pas dit soit en charge" && !battery.charging) || (simonSaysText.innerHTML === "Jacque a dit soit en charge" && battery.charging)) {
+      if ((simonSaysText.innerHTML === "Jacques n'a pas dit soit en charge" && !battery.charging) || (simonSaysText.innerHTML === "Jacques a dit soit en charge" && battery.charging)) {
         document.getElementById("result").innerHTML = "Victoire !";
         Utils.addToScore(10);
       } else {

@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit écrit le mot";
+    simonSaysText.innerHTML = "Jacques n'a pas dit écrit le mot";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit écrit le mot";
+    simonSaysText.innerHTML = "Jacques a dit écrit le mot";
 }
   const colorKeys = Object.keys(colors); // Obtenir les clés de l'objet
   const randomHexColor =
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (Utils.sessionData.lives === 0) {
       Utils.gameOver();
     }
-    if (( simonSaysText.innerHTML === "Jacque n'a pas dit écrit le mot" && word !== randomWord) || (simonSaysText.innerHTML === "Jacque a dit écrit le mot" && word === randomWord)) {
+    if (( simonSaysText.innerHTML === "Jacques n'a pas dit écrit le mot" && word !== randomWord) || (simonSaysText.innerHTML === "Jacques a dit écrit le mot" && word === randomWord)) {
       document.getElementById("result").innerHTML = "Victoire !";
       Utils.addToScore(10);
     } else {

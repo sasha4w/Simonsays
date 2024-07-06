@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let countdown = 6;
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit clique autant de fois demandé";
+    simonSaysText.innerHTML = "Jacques n'a pas dit clique autant de fois demandé";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit clique autant de fois demandé";
+    simonSaysText.innerHTML = "Jacques a dit clique autant de fois demandé";
 }
   const countdownElement = document.getElementById("countdown");
   countdownElement.innerHTML = countdown;
@@ -49,8 +49,8 @@ document.getElementById("clickCount").innerText = clickCount;
 
 // Fonction pour terminer le jeu
 function endGame() {
-  if ( ( simonSaysText.innerHTML === "Jacque n'a pas dit clique autant de fois demandé" && clickCount < requiredClicks) 
-    || (simonSaysText.innerHTML === "Jacque a dit clique autant de fois demandé" && clickCount >= requiredClicks)) {
+  if ( ( simonSaysText.innerHTML === "Jacques n'a pas dit clique autant de fois demandé" && clickCount < requiredClicks) 
+    || (simonSaysText.innerHTML === "Jacques a dit clique autant de fois demandé" && clickCount >= requiredClicks)) {
       clearInterval(countdownInterval); // Arrête le compte à rebours
       document.getElementById("result").innerText = "Gagné !";
       Utils.addToScore(10);

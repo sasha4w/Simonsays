@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit met ton appareil en paysage";
+    simonSaysText.innerHTML = "Jacques n'a pas dit met ton appareil en paysage";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit met ton appareil en paysage";
+    simonSaysText.innerHTML = "Jacques a dit met ton appareil en paysage";
 }
   const countdownInterval = setInterval(() => {
   countdown--;
@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Check if the device is in landscape mode
     const orientationType = window.screen.orientation.type;
-    const jacqueSaid = simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage";
+    const JacquesSaid = simonSaysText.innerHTML === "Jacques a dit met ton appareil en paysage";
     if (
-      ((simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType === "portrait-primary" ||
-        simonSaysText.innerHTML === "Jacque n'a pas dit met ton appareil en paysage" && orientationType === "portrait-secondary") 
-        || (simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage" && orientationType === "landscape-primary" ||
-        simonSaysText.innerHTML === "Jacque a dit met ton appareil en paysage" && orientationType === "landscape-secondary"))
+      ((simonSaysText.innerHTML === "Jacques n'a pas dit met ton appareil en paysage" && orientationType === "portrait-primary" ||
+        simonSaysText.innerHTML === "Jacques n'a pas dit met ton appareil en paysage" && orientationType === "portrait-secondary") 
+        || (simonSaysText.innerHTML === "Jacques a dit met ton appareil en paysage" && orientationType === "landscape-primary" ||
+        simonSaysText.innerHTML === "Jacques a dit met ton appareil en paysage" && orientationType === "landscape-secondary"))
     ) {
       resultElement.innerHTML = "Victoire !";
       Utils.addToScore(10);

@@ -7,17 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const numVibrations = Math.floor(Math.random() * 10) + 1;
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit écrit le nombre de vibration";
+    simonSaysText.innerHTML = "Jacques n'a pas dit écrit le nombre de vibration";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit écrit le nombre de vibration";
+    simonSaysText.innerHTML = "Jacques a dit écrit le nombre de vibration";
 }
   // Correction function
   function isCorrect() {
     const vibrationNumber = document
       .getElementById("vibrationNumber")
       .value.trim();
-    if ((simonSaysText.innerHTML === "Jacque a dit écrit le nombre de vibration" && parseInt(vibrationNumber) === numVibrations) 
-      || (simonSaysText.innerHTML === "Jacque n'a pas dit écrit le nombre de vibration" && parseInt(vibrationNumber) !== numVibrations)) {
+    if ((simonSaysText.innerHTML === "Jacques a dit écrit le nombre de vibration" && parseInt(vibrationNumber) === numVibrations) 
+      || (simonSaysText.innerHTML === "Jacques n'a pas dit écrit le nombre de vibration" && parseInt(vibrationNumber) !== numVibrations)) {
       document.getElementById("result").innerHTML = "Victoire !";
       Utils.addToScore(10);
     } else {

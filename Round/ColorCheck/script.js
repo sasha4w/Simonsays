@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const colorName = colors[randomHexColor];
   const shouldSucceed = () => Math.random() < 0.25;
   if (shouldSucceed()) {
-    simonSaysText.innerHTML = "Jacque n'a pas dit écrit la couleur";
+    simonSaysText.innerHTML = "Jacques n'a pas dit écrit la couleur";
 } else {
-    simonSaysText.innerHTML = "Jacque a dit écrit la couleur";
+    simonSaysText.innerHTML = "Jacques a dit écrit la couleur";
 }
   document.getElementById("wordAsked").style.color = randomHexColor;
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function isCorrect() {
     const word = document.getElementById("word1").value.trim().toLowerCase();
-    if (( simonSaysText.innerHTML === "Jacque n'a pas dit écrit la couleur" && word !== colorName) || (simonSaysText.innerHTML === "Jacque a dit écrit la couleur" && word === colorName)) {
+    if (( simonSaysText.innerHTML === "Jacques n'a pas dit écrit la couleur" && word !== colorName) || (simonSaysText.innerHTML === "Jacques a dit écrit la couleur" && word === colorName)) {
       document.getElementById("result").innerHTML = "Victoire !";
       Utils.addToScore(10);
     } else {

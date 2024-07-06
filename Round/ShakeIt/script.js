@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
         startButton.disabled = true;
         gameStartTime = new Date().getTime(); // Record the start time of the game
         if (shouldSucceed()) {
-            simonSaysText.innerHTML = "Jacque n'a pas dit secoue ton appareil";
+            simonSaysText.innerHTML = "Jacques n'a pas dit secoue ton appareil";
         } else {
-            simonSaysText.innerHTML = "Jacque a dit secoue ton appareil";
+            simonSaysText.innerHTML = "Jacques a dit secoue ton appareil";
         }
 
         // Start countdown timer
@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", function() {
         clearTimeout(timeout);
         window.removeEventListener('devicemotion', handleShake);
 
-        if ((simonSaysText.innerHTML === "Jacque a dit secoue ton appareil" && shakeDetected) ||
-        (simonSaysText.innerHTML === "Jacque n'a pas dit secoue ton appareil" && !shakeDetected)) {
+        if ((simonSaysText.innerHTML === "Jacques a dit secoue ton appareil" && shakeDetected) ||
+        (simonSaysText.innerHTML === "Jacques n'a pas dit secoue ton appareil" && !shakeDetected)) {
         resultElement.innerHTML = "Victoire!";
         Utils.addToScore(10);
     } else {
