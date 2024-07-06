@@ -8,7 +8,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        pug: resolve(__dirname, "views/roundLayout.pug"),
         roundtest: resolve(__dirname, "Round/roundtest.html"),
         WordCheck: resolve(__dirname, "Round/WordCheck/index.html"),
         Chifoumi: resolve(__dirname, "Round/Chifoumi/index.html"),
