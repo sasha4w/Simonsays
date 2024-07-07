@@ -72,6 +72,10 @@ function updateAudioUI(isPlaying) {
 
 // Fonction pour perdre une vie
 function loseLife() {
+    const audioLose = new Audio('./../public/music/audioLose.ogg');
+    audioLose.play().catch(function(error) {
+        console.error("Erreur lors de la lecture du son : ", error);
+    });
     sessionData.lives--;
     saveSessionToLocalStorage();
     // Ici vous pouvez gérer la logique liée à la perte de vie, par exemple afficher un message ou réinitialiser certaines conditions de jeu
@@ -79,6 +83,10 @@ function loseLife() {
 
 // Fonction pour ajouter des points au score
 function addToScore(points) {
+    const audioWin = new Audio('./../public/music/audioWin.ogg');
+    audioWin.play().catch(function(error) {
+        console.error("Erreur lors de la lecture du son : ", error);
+    });
     sessionData.score += points;
     saveSessionToLocalStorage();
     // Ici vous pouvez gérer la logique liée à l'ajout de points, par exemple vérifier si le joueur a gagné ou perdu en fonction du score
