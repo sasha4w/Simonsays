@@ -56,13 +56,13 @@
   ],
   "screenshots": [
     {
-      "src": "/public/screenshot1.png",
+      "src": "/screenshot1.png",
       "sizes": "640x480",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/public/screenshot2.png",
+      "src": "/screenshot2.png",
       "sizes": "640x480",
       "type": "image/png",
       "form_factor": "wide"
