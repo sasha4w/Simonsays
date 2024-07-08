@@ -19,7 +19,6 @@
       "sizes": "144x144",
       "type": "image/png"
     },
-
     {
       "src": "/favicon383x383.png",
       "sizes": "383x383",
@@ -34,19 +33,39 @@
       "src": "/maskable_icon72x72.png",
       "sizes": "72x72",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "/maskable_icon144x144.png",
       "sizes": "144x144",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "/maskable_icon383x383.png",
       "sizes": "383x383",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
+    },
+    {
+      "src": "/maskable_icon512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/public/screenshot1.png",
+      "sizes": "640x480",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/public/screenshot2.png",
+      "sizes": "640x480",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ],
   "related_applications": [
