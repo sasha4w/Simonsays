@@ -72,7 +72,7 @@ function updateAudioUI(isPlaying) {
 
 // Fonction pour perdre une vie
 function loseLife() {
-    const audioLose = new Audio('./../music/audioLose.ogg');
+    const audioLose = new Audio('./../public/music/audioLose.ogg');
     audioLose.play().catch(function(error) {
         console.error("Erreur lors de la lecture du son : ", error);
     });
@@ -83,7 +83,7 @@ function loseLife() {
 
 // Fonction pour ajouter des points au score
 function addToScore(points) {
-    const audioWin = new Audio('./../music/audioWin.ogg');
+    const audioWin = new Audio('./../public/music/audioWin.ogg');
     audioWin.play().catch(function(error) {
         console.error("Erreur lors de la lecture du son : ", error);
     });
