@@ -23,6 +23,7 @@ export default defineConfig({
         NotifCheck: resolve(__dirname, "Round/NotifCheck/index.html"),
         gameOver: resolve(__dirname, "gameOver.html"),
         utils: resolve(__dirname, "assets/utils.js"),
+        Autorisation: resolve(__dirname, "checkNotification.html"),
       },
     },
   },
