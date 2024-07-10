@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#0078d7" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/styles.scss" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="./assets/script.jsx" defer type="module"></script>
+    <script src="./assets/notif.js" defer type="module"></script>
     <title>Simon says</title>
   </head>
   <body>
@@ -15,13 +15,14 @@
       <h1>Simon says</h1>
       <p> Avant de commencer à jouer tu dois autoriser toutes ses fonctions</p>
       <div>
-        <button class="levelTest" onclick="requestMicrophonePermission()" >Request Microphone Access</button>
-        <button class="levelTest" onclick="triggerVibration()">Trigger Vibration</button>
-        <button class="levelTest" onclick="requestNotificationPermission()">Request Notification Permission</button>
+        <button class="levelTest" id="audio-btn">Autoriser le son</button>
+        <button class="levelTest" id="micro-btn">Autoriser le micro</button>
+        <button class="levelTest" id="notif-btn">Autoriser les notifications</button>
+        <button class="levelTest" id="vibrate-btn">Autoriser les vibrations</button>
       </div>
       <a class="levelTest" href="./Round/roundtest.html">Let's Play</a>
     </header>
     <main></main>
     <footer></footer>
   </body>
-</html> -->
+</html>
