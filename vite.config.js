@@ -1,9 +1,16 @@
-// vite.config.js
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import pugPlugin from 'vite-plugin-pug';
+
 export default defineConfig({
-  plugins: [pugPlugin()],
+  plugins: [
+    pugPlugin({
+      handler: (pugContent, { filename }) => {
+        // Custom processing if needed
+        return pugContent;
+      }
+    })
+  ],
   build: {
     rollupOptions: {
       input: {
@@ -19,6 +26,7 @@ export default defineConfig({
         Landscapemode: resolve(__dirname, "Round/Landscapemode/index.html"),
         ShakeIt: resolve(__dirname, "Round/ShakeIt/index.html"),
         BatteryCheck: resolve(__dirname, "Round/BatteryCheck/index.html"),
+        Aimlabs: resolve(__dirname, "Round/Aimlabs/index.html"),
         gameOver: resolve(__dirname, "gameOver.html"),
         utils: resolve(__dirname, "assets/utils.js"),
       },
